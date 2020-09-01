@@ -55,7 +55,6 @@
 			});
 			callback(obj);
 		}
-
 	</script>
 
 </head>
@@ -74,23 +73,46 @@
 
 		<!-- For example columns with settings: -->
 		<div class="row">
-			<div class="col s6 input-field">
-				<input type="checkbox" class="value" id="option1" />
-				<label for="option1" class="translate">option1</label>
-			</div>
-			<div class="col s6 input-field">
-				<input type="checkbox" class="value" id="option1" />
-				<label for="option1" class="translate">option1</label>
+			<div class="col s3 input-field">
+				<h5 class="translate" id="logLvl">logLvl</h5>
+				<br />
+				<input type="checkbox" class="value" id="silly" />
+				<label for="silly" class="translate">silly</label>
+				<br />
+				<input type="checkbox" class="value" id="debug" />
+				<label for="debug" class="translate">debug</label>
+				<br />
+				<input type="checkbox" class="value" id="info" />
+				<label for="info" class="translate">info</label>
+				<br />
+				<input type="checkbox" class="value" id="warn" />
+				<label for="warn" class="translate">warn</label>
+				<br />
+				<input type="checkbox" class="value" id="error" />
+				<label for="error" class="translate">error</label>
 			</div>
 
 			<div class="col s6 input-field">
-				<input type="text" class="value" id="option2" />
-				<label for="option2" class="translate">option2</label>
+				<h5 class="translate" id="logLvl">serverData</h5>
+				<div class="row">
+					<div class="col s12 input-field">
+						<input type="text" class="value" id="apiKey" />
+						<label for="apiKey" class="translate">apiKey</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s9 input-field">
+						<input type="text" class="value" id="url" />
+						<label for="url" class="translate">url</label>
+					</div>
+					<div class="col s3 input-field">
+						<input type="number" class="value" id="port" />
+						<label for="port" class="translate">port</label>
+					</div>
+				</div>
 			</div>
 		</div>
-
 	</div>
-
 </body>
 
 </html>
