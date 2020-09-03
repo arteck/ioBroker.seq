@@ -6,13 +6,9 @@
 
 const utils = require('@iobroker/adapter-core');
 const seq = require('seq-logging');
-let logger;
-let verboseActive;
-let debugActive;
-let infomationActive;
-let warningActive;
-let errorActive;
+const adapterName = require('./package.json').name.split('.').pop();
 
+let logger;
 
 class Seq extends utils.Adapter {
 
@@ -22,6 +18,7 @@ class Seq extends utils.Adapter {
             name: 'seq',
         });
 
+
         //this.requireLog(true);
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
@@ -30,7 +27,6 @@ class Seq extends utils.Adapter {
 
 
     async onReady() {
-
         const _serverUrl = this.config.url;
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
@@ -48,7 +44,7 @@ class Seq extends utils.Adapter {
     onLog(data) {
         this.log.warn('config : ' + data);
         const _seqLogLvl = this.GetSeqLogLvl(data.severity);
-        const _message = this.createMessageObj(data.message);
+        const _message = this.CreateMessageObj(data.message);
         this.SeqLog(seqLogLvl, data.ts, data.from, data.message);
     }
 
@@ -63,7 +59,6 @@ class Seq extends utils.Adapter {
 
     GetSeqLogLvl(data) {
         let _seqLogLvl;
-
         switch (data) {
             case 'silly':
                 _seqLogLvl = 'Verbose';
@@ -83,7 +78,6 @@ class Seq extends utils.Adapter {
             default:
                 _seqLogLvl = '';
         }
-
         return _seqLogLvl;
     }
 
@@ -99,13 +93,13 @@ class Seq extends utils.Adapter {
         });
     }
 
-    createMessageObj(inMessage) {
-        const index = Object.values(this.indexesOf(inMessage, / /g))[0][1];
+    CreateMessageObj(inMessage) {
+        const index = Object.values(this.IndexesOf(inMessage, / /g))[0][1];
         const message = inMessage.substring(index);
         return message;
     }
 
-    indexesOf(string, regex) {
+    IndexesOf(string, regex) {
         let match, indexes = {};
         regex = new RegExp(regex);
         while (match = regex.exec(string)) {
