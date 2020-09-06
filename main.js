@@ -1,13 +1,16 @@
 'use strict';
 
-/*
- * Created with @iobroker/create-adapter v1.26.3
- */
-
 const utils = require('@iobroker/adapter-core');
 const seq = require('seq-logging');
 const adapterName = require('./package.json').name.split('.').pop();
 
+const seqLogLvlMap = {
+    'silly': 'Verbose',
+    'debug': 'Debug',
+    'info': 'Information',
+    'warn': 'Warning',
+    'error': 'Error'
+};
 let logger;
 
 class Seq extends utils.Adapter {
@@ -15,25 +18,20 @@ class Seq extends utils.Adapter {
     constructor(options) {
         super({
             ...options,
-            name: 'seq',
+            name: adapterName,
         });
 
 
-        //this.requireLog(true);
+        this.requireLog(true);
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
         this.on('log', this.onLog.bind(this));
     }
 
-
     async onReady() {
         const _serverUrl = this.config.url;
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
-
-        this.log.warn('config : ' + _serverUrl);
-        this.log.warn('config : ' + _serverPort);
-        this.log.warn('config : ' + _apiKey);
 
         logger = new seq.Logger({
             serverUrl: _serverUrl + ':' + _serverPort,
@@ -42,8 +40,7 @@ class Seq extends utils.Adapter {
     }
 
     onLog(data) {
-        this.log.warn('config : ' + data);
-        const _seqLogLvl = this.GetSeqLogLvl(data.severity);
+        const _seqLogLvl = seqLogLvlMap[data.severity];
         const _message = this.CreateMessageObj(data.message);
         this.SeqLog(seqLogLvl, data.ts, data.from, data.message);
     }
@@ -55,30 +52,6 @@ class Seq extends utils.Adapter {
         } catch (e) {
             callback();
         }
-    }
-
-    GetSeqLogLvl(data) {
-        let _seqLogLvl;
-        switch (data) {
-            case 'silly':
-                _seqLogLvl = 'Verbose';
-                break;
-            case 'debug':
-                _seqLogLvl = 'Debug';
-                break;
-            case 'info':
-                _seqLogLvl = 'Information';
-                break;
-            case 'warn':
-                _seqLogLvl = 'Warning';
-                break;
-            case 'error':
-                _seqLogLvl = 'Error';
-                break;
-            default:
-                _seqLogLvl = '';
-        }
-        return _seqLogLvl;
     }
 
     SeqLog(logLevel, ts, from, message) {
@@ -110,15 +83,8 @@ class Seq extends utils.Adapter {
     }
 }
 
-// @ts-ignore parent is a valid property on module
 if (module.parent) {
-    // Export the constructor in compact mode
-    /**
-     * @param {Partial<utils.AdapterOptions>} [options={}]
-     */
     module.exports = (options) => new Seq(options);
 } else {
-    // otherwise start the instance directly
     new Seq();
-
 }
