@@ -22,16 +22,17 @@ class Seq extends utils.Adapter {
         });
 
 
-        this.requireLog(true);
+
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
         this.on('log', this.onLog.bind(this));
     }
 
-    async onReady() {
+    onReady() {
         const _serverUrl = this.config.url;
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
+        this.requireLog(true);
 
         logger = new seq.Logger({
             serverUrl: _serverUrl + ':' + _serverPort,
@@ -42,7 +43,7 @@ class Seq extends utils.Adapter {
     onLog(data) {
         const _seqLogLvl = seqLogLvlMap[data.severity];
         const _message = this.CreateMessageObj(data.message);
-        this.SeqLog(seqLogLvl, data.ts, data.from, data.message);
+        this.SeqLog(_seqLogLvl, data.ts, data.from, _message);
     }
 
     onUnload(callback) {
@@ -56,7 +57,7 @@ class Seq extends utils.Adapter {
 
     SeqLog(logLevel, ts, from, message) {
         logger.emit({
-            timestamp: ts,
+            timestamp: new Date(ts).toISOString(),
             level: logLevel,
             messageTemplate: '{Source}: ' + message,
             properties: {
