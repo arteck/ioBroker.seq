@@ -1,5 +1,8 @@
 'use strict';
 
+// Todo prüfen ob Config vorhanden...
+// Todo Logausgaben...
+
 const utils = require('@iobroker/adapter-core');
 const seq = require('seq-logging');
 const adapterName = require('./package.json').name.split('.').pop();
@@ -21,8 +24,6 @@ class Seq extends utils.Adapter {
             name: adapterName,
         });
 
-
-
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
         this.on('log', this.onLog.bind(this));
@@ -32,6 +33,7 @@ class Seq extends utils.Adapter {
         const _serverUrl = this.config.url;
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
+
         this.requireLog(true);
 
         logger = new seq.Logger({
