@@ -4,7 +4,8 @@ const utils = require('@iobroker/adapter-core');
 const seq = require('seq-logging');
 const adapterName = require('./package.json').name.split('.').pop();
 
-let seqLogLvlMap = [{
+// Create Seq LogConfig
+let seqEventConfig = [{
         LogLvl: 'silly',
         SeqLogLvl: 'Verbose',
         Active: false
@@ -46,31 +47,48 @@ class Seq extends utils.Adapter {
     }
 
     onReady() {
+
+        // Get Config
         const _serverUrl = this.config.url;
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
 
+        // Check Server address
+        if (_serverUrl === '' || !(_serverUrl.startsWith('http://') && _serverUrl.startsWith('http://'))) {
+            this.log.warn('Server address is not a valid, please check your settings!')
+            return;
+        }
 
+        // Check Server port
+        if (_serverPort === '') {
+            this.log.warn('No server port configured, please check your settings!')
+            return;
+        }
 
         // Check which log events have been activated
         let _subscribedEvents = [];
-        seqLogLvlMap.forEach(x => {
+        seqEventConfig.forEach(x => {
             x.Active = this.config[x.LogLvl];
             if (x.Active) {
                 _subscribedEvents.push(x.LogLvl);
             }
         });
-        this.log.info(`Log events [${_subscribedEvents.join(' ,')}] subscribed`)
 
         // Check if a log event was activated
-        if (seqLogLvlMap.filter(x => x.Active).length === 0) {
+        if (seqEventConfig.filter(x => x.Active).length === 0) {
             this.log.warn('No log events were subscribed, please check your settings!')
             return;
         }
 
+        // Show subscribed events     
+        this.log.info(`Log events [${_subscribedEvents.join(' ,')}] subscribed`)
+
+        // Activate Log Transporter
+        // https://github.com/ioBroker/ioBroker.js-controller/blob/master/doc/LOGGING.md
         this.requireLog(true);
         this.on('log', this.onLog.bind(this));
 
+        // Init SeqLogger 
         seqLogger = new seq.Logger({
             serverUrl: _serverUrl + ':' + _serverPort,
             apiKey: _apiKey
@@ -78,8 +96,11 @@ class Seq extends utils.Adapter {
     }
 
     onLog(data) {
-        const _seqLogObj = seqLogLvlMap.find(x => x.LogLvl === data.severity);
+        // Get seqLogLvlMap for event
+        const _seqLogObj = seqEventConfig.find(x => x.LogLvl === data.severity);
+        // Extract pid and message from event message
         const _msgObj = this.ExtractPidAndMessage(data.message);
+        // Check if eventLvl activate
         if (_seqLogObj.Active) {
             try {
                 seqLogger.emit({
@@ -100,6 +121,7 @@ class Seq extends utils.Adapter {
 
     onUnload(callback) {
         try {
+            // Flush logger 
             seqLogger.close();
             callback();
         } catch (ex) {
