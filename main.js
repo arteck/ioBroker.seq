@@ -65,7 +65,7 @@ class Seq extends utils.Adapter {
             return;
         }
 
-        // Check which log events have been activated
+        // Set which log events have been activated
         let _subscribedEvents = [];
         seqEventConfig.forEach(x => {
             x.Active = this.config[x.LogLvl];
