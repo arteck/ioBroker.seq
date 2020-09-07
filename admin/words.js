@@ -43,8 +43,8 @@ systemDictionary = {
 		'de': 'Error'
 	},
 	'apiKey': {
-		'en': 'APIKey (Optinal)',
-		'de': 'APIKey (Optinal)'
+		'en': 'APIKey (Optional)',
+		'de': 'APIKey (Optional)'
 	},
 	'url': {
 		'en': 'URL',
