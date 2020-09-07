@@ -7,14 +7,15 @@ const utils = require('@iobroker/adapter-core');
 const seq = require('seq-logging');
 const adapterName = require('./package.json').name.split('.').pop();
 
-const seqLogLvlMap = {
-    'silly': 'Verbose',
-    'debug': 'Debug',
-    'info': 'Information',
-    'warn': 'Warning',
-    'error': 'Error'
+let seqLogLvlMap = {
+    silly: { LogLvl: 'Verbose', Active: false },
+    debug: { LogLvl: 'Debug', Active: false },
+    info: { LogLvl: 'Information', Active: false },
+    warn: { LogLvl: 'Warning', Active: false },
+    error: { LogLvl: 'Error', Active: false }
 };
-let logger;
+
+let seqLogger;
 
 class Seq extends utils.Adapter {
 
@@ -34,42 +35,51 @@ class Seq extends utils.Adapter {
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
 
+        seqLogLvlMap['silly'].Active = this.config.silly;
+        seqLogLvlMap['debug'].Active = this.config.debug;
+        seqLogLvlMap['info'].Active = this.config.info;
+        seqLogLvlMap['warn'].Active = this.config.warn;
+        seqLogLvlMap['error'].Active = this.config.error;
+
         this.requireLog(true);
 
-        logger = new seq.Logger({
+        seqLogger = new seq.Logger({
             serverUrl: _serverUrl + ':' + _serverPort,
             apiKey: _apiKey
         });
+
     }
 
     onLog(data) {
-        const _seqLogLvl = seqLogLvlMap[data.severity];
-        const _message = this.CreateMessageObj(data.message);
-        this.SeqLog(_seqLogLvl, data.ts, data.from, _message);
+        const _seqLogObj = seqLogLvlMap[data.severity];
+
+        if (_seqLogObj.Active) {
+            try {
+                seqLogger.emit({
+                    timestamp: new Date(data.ts).toISOString(),
+                    level: _seqLogObj.LogLvl,
+                    messageTemplate: '{Source}: ' + this.ExtractMessage(data.message),
+                    properties: {
+                        Application: 'ioBroker',
+                        Source: data.from
+                    }
+                });
+            } catch (e) {
+                this.log.error(`Cannot send data to server: ${e}`);
+            }
+        }
     }
 
     onUnload(callback) {
         try {
-            logger.close();
+            seqLogger.close();
             callback();
         } catch (e) {
             callback();
         }
     }
 
-    SeqLog(logLevel, ts, from, message) {
-        logger.emit({
-            timestamp: new Date(ts).toISOString(),
-            level: logLevel,
-            messageTemplate: '{Source}: ' + message,
-            properties: {
-                Application: 'ioBroker',
-                Source: from
-            }
-        });
-    }
-
-    CreateMessageObj(inMessage) {
+    ExtractMessage(inMessage) {
         const index = Object.values(this.IndexesOf(inMessage, / /g))[0][1];
         const message = inMessage.substring(index);
         return message;
