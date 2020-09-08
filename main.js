@@ -60,7 +60,7 @@ class Seq extends utils.Adapter {
         }
 
         // Check Server port
-        if (_serverPort === '') {
+        if (!_serverPort || _serverPort === '') {
             this.log.warn('No server port configured, please check your settings!')
             return;
         }
