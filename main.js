@@ -54,7 +54,7 @@ class Seq extends utils.Adapter {
         const _apiKey = this.config.apiKey;
 
         // Check Server address
-        if (_serverUrl === '' || !(_serverUrl.startsWith('http://') && _serverUrl.startsWith('http://'))) {
+        if (!_serverUrl || _serverUrl === '' || !(_serverUrl.startsWith('http://') && _serverUrl.startsWith('http://'))) {
             this.log.warn('Server address is not a valid, please check your settings!')
             return;
         }
