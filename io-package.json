@@ -69,6 +69,7 @@
             "js-controller": ">=1.4.2"
         }]
     },
+    "native": {},
     "objects": [],
     "instanceObjects": []
 }
