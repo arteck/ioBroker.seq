@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.seq.png?downloads=true)](https://nodei.co/npm/iobroker.seq/)
 
-## seq adapter for ioBroker
+## Seq adapter for ioBroker
 
 This adapter allows you to push your ioBroker log into the system of [Seq](https://datalust.co/seq)
 
