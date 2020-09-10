@@ -132,8 +132,15 @@ class Seq extends utils.Adapter {
     ExtractPidAndMessage(inMessage) {
         const _mIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][1];
         const _pIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][0];
-        const _message = inMessage.substring(_mIndex).trim();
-        const _pid = inMessage.substring(_pIndex, _mIndex).replace('(', '').replace(')', '').trim();
+        let _message = inMessage.substring(_mIndex).trim();
+        let _pid = inMessage.substring(_pIndex, _mIndex).replace('(', '').replace(')', '').trim();
+
+        // check if the message contains a pit, if not the object must fill differently
+        if (isNaN(_pid)) {
+            _message = inMessage.substring(_pIndex).trim();
+            _pid = -1;
+        }
+
         return {
             Message: _message,
             Pid: parseInt(_pid)
