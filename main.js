@@ -3,6 +3,7 @@
 const utils = require('@iobroker/adapter-core');
 const seq = require('seq-logging');
 const adapterName = require('./package.json').name.split('.').pop();
+let messageTemplate;
 
 // Create Seq LogConfig
 let seqEventConfig = [{
@@ -52,6 +53,7 @@ class Seq extends utils.Adapter {
         const _serverUrl = this.config.url;
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
+        messageTemplate = this.config.template;
 
         // Check Server address
         if (!_serverUrl || _serverUrl === '' || !(_serverUrl.startsWith('http://') && _serverUrl.startsWith('http://'))) {
@@ -62,6 +64,12 @@ class Seq extends utils.Adapter {
         // Check Server port
         if (!_serverPort || _serverPort === '') {
             this.log.warn('No server port configured, please check your settings!')
+            return;
+        }
+
+        // Check Message template
+        if (!messageTemplate || messageTemplate === '' || !messageTemplate.includes('{Message}')) {
+            this.log.warn('Invalid message template, please check your settings!')
             return;
         }
 
@@ -106,7 +114,7 @@ class Seq extends utils.Adapter {
                 seqLogger.emit({
                     timestamp: new Date(data.ts).toISOString(),
                     level: _seqLogObj.SeqLogLvl,
-                    messageTemplate: '{Source}: ' + _msgObj.Message,
+                    messageTemplate: messageTemplate.replace('{Message}', _msgObj.Message),
                     properties: {
                         Application: 'ioBroker',
                         Source: data.from,
