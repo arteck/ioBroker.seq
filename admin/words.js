@@ -80,8 +80,8 @@ systemDictionary = {
 		'ru': 'Минимальный шаблон: {Message}'
 	},
 	'templateParameters': {
-		'en': 'Template Parameters: {Application}, {Message}, {Pid} and {Source}',
-		'de': 'Template Parameter: {Application}, {Message}, {Pid} und {Source}',
+		'en': 'Template Parameters: {Application}, {Message}, {Pid} and {Source}.',
+		'de': 'Template Parameter: {Application}, {Message}, {Pid} und {Source}.',
 		'ru': 'Параметры шаблона: {Application}, {Message}, {Pid} и {Source}.'
 	},
 };
