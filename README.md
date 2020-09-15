@@ -6,7 +6,6 @@
 ![Number of Installations (latest)](http://iobroker.live/badges/seq-installed.svg)
 ![Number of Installations (stable)](http://iobroker.live/badges/seq-stable.svg)
 [![Dependency Status](https://img.shields.io/david/o0shojo0o/iobroker.seq.svg)](https://david-dm.org/o0shojo0o/iobroker.seq)
-[![Known Vulnerabilities](https://snyk.io/test/github/o0shojo0o/ioBroker.seq/badge.svg)](https://snyk.io/test/github/o0shojo0o/ioBroker.seq)
 
 [![NPM](https://nodei.co/npm/iobroker.seq.png?downloads=true)](https://nodei.co/npm/iobroker.seq/)
 
