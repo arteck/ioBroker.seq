@@ -1,86 +1,100 @@
 {
-  "common": {
-    "name": "seq",
-    "version": "0.0.1",
-    "news": {
-      "0.0.1": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版"
-      }
+    "common": {
+        "name": "seq",
+        "version": "0.0.2-beta.0",
+        "news": {
+            "0.0.2-beta.0": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "изначальный выпуск",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "初始发行"
+            },
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Seq",
+        "titleLang": {
+            "en": "Seq",
+            "de": "Seq",
+            "ru": "Seq",
+            "pt": "Seq",
+            "nl": "Seq",
+            "fr": "Seq",
+            "it": "Seq",
+            "es": "Seq",
+            "pl": "Seq",
+            "zh-cn": "顺序"
+        },
+        "desc": {
+            "en": "seq",
+            "de": "seq",
+            "ru": "seq",
+            "pt": "seq",
+            "nl": "seq",
+            "fr": "seq",
+            "it": "seq",
+            "es": "seq",
+            "pl": "seq",
+            "zh-cn": "序列"
+        },
+        "authors": [
+            "Dennis Hinzpeter <info@bastelbunker.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "logTransporter": true,
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "seq.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/o0shojo0o/ioBroker.seq/master/admin/seq.png",
+        "readme": "https://github.com/o0shojo0o/ioBroker.seq/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "utility",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2"
+            }
+        ],
+        "installedFrom": "https://github.com/o0shojo0o/ioBroker.seq/tarball/c9e111ede3984df89de5bf8ff9911070bca94bf5"
     },
-    "title": "Seq",
-    "titleLang": {
-      "en": "Seq",
-      "de": "Seq",
-      "ru": "Seq",
-      "pt": "Seq",
-      "nl": "Seq",
-      "fr": "Seq",
-      "it": "Seq",
-      "es": "Seq",
-      "pl": "Seq",
-      "zh-cn": "顺序"
+    "native": {
+        "silly": true,
+        "debug": true,
+        "info": true,
+        "warn": true,
+        "error": true,
+        "url": "",
+        "port": "",
+        "apiKey": "",
+        "template": "{Source}: {Message}"
     },
-    "desc": {
-      "en": "seq",
-      "de": "seq",
-      "ru": "seq",
-      "pt": "seq",
-      "nl": "seq",
-      "fr": "seq",
-      "it": "seq",
-      "es": "seq",
-      "pl": "seq",
-      "zh-cn": "序列"
-    },
-    "authors": [
-      "Dennis Hinzpeter <info@bastelbunker.de>"
-    ],
-    "keywords": [
-      "ioBroker",
-      "template",
-      "Smart Home",
-      "home automation"
-    ],
-    "logTransporter": true,
-    "license": "MIT",
-    "platform": "Javascript/Node.js",
-    "main": "main.js",
-    "icon": "seq.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/o0shojo0o/ioBroker.seq/master/admin/seq.png",
-    "readme": "https://github.com/o0shojo0o/ioBroker.seq/blob/master/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "utility",
-    "compact": true,
-    "connectionType": "local",
-    "dataSource": "push",
-    "materialize": true,
-    "dependencies": [{
-      "js-controller": ">=1.4.2"
-    }],
-    "installedFrom": "https://github.com/o0shojo0o/ioBroker.seq/tarball/c9e111ede3984df89de5bf8ff9911070bca94bf5"
-  },
-  "native": {
-    "silly": true,
-    "debug": true,
-    "info": true,
-    "warn": true,
-    "error": true,
-    "url": "",
-    "port": "",
-    "apiKey": "",
-    "template": "{Source}: {Message}"
-  },
-  "objects": [],
-  "instanceObjects": []
+    "objects": [],
+    "instanceObjects": []
 }
