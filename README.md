@@ -22,6 +22,7 @@ This adapter allows you to push your ioBroker log into the system of [Seq](https
 
 ## Changelog
 <!--
+ https://github.com/AlCalzone/release-script#usage
     npm run release prerelease beta -- --all
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
