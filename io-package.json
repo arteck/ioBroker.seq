@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.0.2-beta.0",
+        "version": "0.0.2",
         "news": {
+            "0.0.2": {
+                "en": "new release for npm...",
+                "de": "Neuerscheinung für npm ...",
+                "ru": "новый релиз для npm ...",
+                "pt": "novo lançamento para npm ...",
+                "nl": "nieuwe release voor npm ...",
+                "fr": "nouvelle version pour npm ...",
+                "it": "nuova versione per npm ...",
+                "es": "nuevo lanzamiento para npm ...",
+                "pl": "nowa wersja dla npm ...",
+                "zh-cn": "npm的新版本..."
+            },
             "0.0.2-beta.0": {
                 "en": "initial release",
                 "de": "Erstveröffentlichung",
