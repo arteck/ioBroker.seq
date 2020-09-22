@@ -56,7 +56,7 @@ class Seq extends utils.Adapter {
         messageTemplate = this.config.template;
 
         // Check Server address
-        if (!_serverUrl || _serverUrl === '' || !(_serverUrl.startsWith('http://') && _serverUrl.startsWith('https://'))) {
+        if (!_serverUrl || _serverUrl === '' || (!_serverUrl.startsWith('http://') && !_serverUrl.startsWith('https://'))) {
             this.log.warn('Server address is not a valid, please check your settings!')
             return;
         }

@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "news": {
+            "0.0.4": {
+                "en": "bugfix at the server address check",
+                "de": "Bugfix bei der Serveradressprüfung",
+                "ru": "исправление ошибки при проверке адреса сервера",
+                "pt": "correção de bug na verificação do endereço do servidor",
+                "nl": "bugfix bij de serveradrescontrole",
+                "fr": "correction de bogue lors de la vérification de l'adresse du serveur",
+                "it": "bugfix al controllo dell'indirizzo del server",
+                "es": "corrección de errores en la verificación de la dirección del servidor",
+                "pl": "poprawka błędu przy sprawdzaniu adresu serwera",
+                "zh-cn": "服务器地址检查中的错误修正"
+            },
             "0.0.3": {
                 "en": "fix minimum js.controller version",
                 "de": "Korrigieren Sie die minimale js.controller-Version",
