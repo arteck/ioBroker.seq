@@ -28,6 +28,9 @@ This adapter allows you to push your ioBroker log into the system of [Seq](https
 	### __WORK IN PROGRESS__
 -->
 
+### 0.0.3 (2020-09-22)
+* (IdleBit) fix minimum js.controller version
+
 ### 0.0.2 (2020-09-17)
 * (IdleBit) new release for npm...
 

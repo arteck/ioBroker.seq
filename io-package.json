@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "news": {
+            "0.0.3": {
+                "en": "fix minimum js.controller version",
+                "de": "Korrigieren Sie die minimale js.controller-Version",
+                "ru": "исправить минимальную версию js.controller",
+                "pt": "corrigir versão mínima do js.controller",
+                "nl": "minimale js.controller-versie repareren",
+                "fr": "correction de la version minimale de js.controller",
+                "it": "correzione della versione minima di js.controller",
+                "es": "corregir la versión mínima de js.controller",
+                "pl": "napraw minimalną wersję js.controller",
+                "zh-cn": "修复最低js.controller版本"
+            },
             "0.0.2": {
                 "en": "new release for npm...",
                 "de": "Neuerscheinung für npm ...",
@@ -89,9 +101,11 @@
         "connectionType": "local",
         "dataSource": "push",
         "materialize": true,
-        "dependencies": [{
-            "js-controller": ">=2.0.0"
-        }]
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
     },
     "native": {
         "silly": true,
