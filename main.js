@@ -4,6 +4,7 @@ const utils = require('@iobroker/adapter-core');
 const seq = require('seq-logging');
 const adapterName = require('./package.json').name.split('.').pop();
 let messageTemplate;
+let systemName;
 
 // Create Seq LogConfig
 let seqEventConfig = [{
@@ -54,6 +55,7 @@ class Seq extends utils.Adapter {
         const _serverPort = this.config.port;
         const _apiKey = this.config.apiKey;
         messageTemplate = this.config.template;
+        systemName = this.config.systemName;
 
         // Check Server address
         if (!_serverUrl || _serverUrl === '' || (!_serverUrl.startsWith('http://') && !_serverUrl.startsWith('https://'))) {
@@ -116,6 +118,7 @@ class Seq extends utils.Adapter {
                     level: _seqLogObj.SeqLogLvl,
                     messageTemplate: messageTemplate.replace('{Message}', _msgObj.Message),
                     properties: {
+                        SystemName: systemName,
                         Application: 'ioBroker',
                         Source: data.from,
                         Pid: _msgObj.Pid

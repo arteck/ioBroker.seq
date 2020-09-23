@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "news": {
+            "0.0.5": {
+                "en": "add param SystemName for display in Seq",
+                "de": "Fügen Sie den Parameter SystemName für die Anzeige in Seq",
+                "ru": "добавить параметр SystemName для отображения в Seq",
+                "pt": "adicione o parâmetro SystemName para exibição em Seq",
+                "nl": "voeg param SystemName toe voor weergave in Seq",
+                "fr": "ajouter le paramètre SystemName pour l'affichage dans Seq",
+                "it": "aggiungere il parametro SystemName per la visualizzazione in Seq",
+                "es": "agregue el parámetro SystemName para mostrarlo en la secuencia",
+                "pl": "dodaj parametr NazwaSystemu do wyświetlania w Seq",
+                "zh-cn": "添加参数SystemName以在Seq中显示"
+            },
             "0.0.4": {
                 "en": "bugfix at the server address check",
                 "de": "Bugfix bei der Serveradressprüfung",
@@ -128,7 +140,8 @@
         "url": "",
         "port": "",
         "apiKey": "",
-        "template": "{Source}: {Message}"
+        "template": "{Source}: {Message}",
+        "systemName": "System_01"
     },
     "objects": [],
     "instanceObjects": []

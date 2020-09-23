@@ -28,6 +28,9 @@ This adapter allows you to push your ioBroker log into the system of [Seq](https
 	### __WORK IN PROGRESS__
 -->
 
+### 0.0.5 (2020-09-23)
+* (IdleBit) add param SystemName for display in Seq
+
 ### 0.0.4 (2020-09-23)
 * (IdleBit) bugfix at the server address check  
 
