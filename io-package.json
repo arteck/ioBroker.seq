@@ -120,7 +120,7 @@
         "readme": "https://github.com/o0shojo0o/ioBroker.seq/blob/master/README.md",
         "loglevel": "info",
         "mode": "daemon",
-        "type": "utility",
+        "type": "logic",
         "compact": true,
         "connectionType": "local",
         "dataSource": "push",
