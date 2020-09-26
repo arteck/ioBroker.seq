@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.0.5",
+        "version": "0.1.0",
         "news": {
+            "0.1.0": {
+                "en": "API key is no longer not displayed in clear text \nAPI key is now stored encrypted\n***Attention: The API key will be lost and must be set again!***\nHigher dependencies of the js-controller (>=3.1.0)",
+                "de": "Der API-Schlüssel wird nicht mehr im Klartext angezeigt\nDer API-Schlüssel wird jetzt verschlüsselt gespeichert\n*** Achtung: Der API-Schlüssel geht verloren und muss erneut gesetzt werden! ***\nHöhere Abhängigkeiten des js-Controllers (> = 3.1.0)",
+                "ru": "Ключ API больше не отображается в виде открытого текста\nКлюч API теперь хранится в зашифрованном виде\n*** Внимание: API-ключ будет утерян и его нужно будет установить заново! ***\nВысшие зависимости js-контроллера (> = 3.1.0)",
+                "pt": "A chave API não é mais exibida em texto não criptografado\nA chave API agora é armazenada criptografada\n*** Atenção: A chave API será perdida e deve ser configurada novamente! ***\nDependências mais altas do controlador js (> = 3.1.0)",
+                "nl": "API-sleutel wordt niet langer in duidelijke tekst weergegeven\nAPI-sleutel wordt nu versleuteld opgeslagen\n*** Let op: de API-sleutel gaat verloren en moet opnieuw worden ingesteld! ***\nHogere afhankelijkheden van de js-controller (> = 3.1.0)",
+                "fr": "La clé API n'est plus affichée en texte clair\nLa clé API est maintenant stockée cryptée\n*** Attention: la clé API sera perdue et devra être redéfinie! ***\nDépendances plus élevées du contrôleur js (> = 3.1.0)",
+                "it": "La chiave API non viene più visualizzata in chiaro\nLa chiave API è ora archiviata crittografata\n*** Attenzione: la chiave API andrà persa e dovrà essere impostata di nuovo! ***\nDipendenze più elevate del js-controller (> = 3.1.0)",
+                "es": "La clave de API ya no se muestra en texto claro\nLa clave de API ahora se almacena cifrada\n*** Atención: ¡La clave API se perderá y debe configurarse nuevamente! ***\nDependencias más altas del controlador js (> = 3.1.0)",
+                "pl": "Klucz API nie jest już wyświetlany zwykłym tekstem\nKlucz API jest teraz przechowywany w postaci zaszyfrowanej\n*** Uwaga: klucz API zostanie utracony i należy go ustawić ponownie! ***\nWyższe zależności kontrolera js (> = 3.1.0)",
+                "zh-cn": "API密钥不再不再以明文显示\nAPI密钥现已加密存储\n***注意：API密钥将丢失，必须重新设置！***\njs控制器的更高依赖性（> = 3.1.0）"
+            },
             "0.0.5": {
                 "en": "add param SystemName for display in Seq",
                 "de": "Fügen Sie den Parameter SystemName für die Anzeige in Seq",
@@ -125,9 +137,11 @@
         "connectionType": "local",
         "dataSource": "push",
         "materialize": true,
-        "dependencies": [{
-            "js-controller": ">=3.1.0"
-        }]
+        "dependencies": [
+            {
+                "js-controller": ">=3.1.0"
+            }
+        ]
     },
     "encryptedNative": [
         "apiKey"
