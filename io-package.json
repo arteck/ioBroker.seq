@@ -149,11 +149,9 @@
         "connectionType": "local",
         "dataSource": "push",
         "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=3.1.0"
-            }
-        ]
+        "dependencies": [{
+            "js-controller": ">=3.1.0"
+        }]
     },
     "encryptedNative": [
         "apiKey"
@@ -167,6 +165,7 @@
         "info": true,
         "warn": true,
         "error": true,
+        "allLogs": true,
         "url": "",
         "port": "",
         "apiKey": "",
