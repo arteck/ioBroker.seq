@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "news": {
+            "0.2.1": {
+                "en": "added forgetting native...",
+                "de": "hinzugefügt, einheimische zu vergessen ...",
+                "ru": "добавил забывая родной ...",
+                "pt": "adicionado esquecendo nativo ...",
+                "nl": "toegevoegd vergeten native ...",
+                "fr": "ajouté oubliant natif ...",
+                "it": "aggiunto dimenticando nativo ...",
+                "es": "añadido olvidando nativo ...",
+                "pl": "dodano zapominanie natywnych ...",
+                "zh-cn": "添加了忘记本机..."
+            },
             "0.2.0": {
                 "en": "Optional selective logging on adapter basis",
                 "de": "Optionale selektive Protokollierung auf Adapterbasis",
@@ -149,9 +161,11 @@
         "connectionType": "local",
         "dataSource": "push",
         "materialize": true,
-        "dependencies": [{
-            "js-controller": ">=3.1.0"
-        }]
+        "dependencies": [
+            {
+                "js-controller": ">=3.1.0"
+            }
+        ]
     },
     "encryptedNative": [
         "apiKey"
