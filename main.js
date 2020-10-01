@@ -113,17 +113,20 @@ class Seq extends utils.Adapter {
         // Check if eventLvl activate
         if (_seqLogObj.Active) {
             try {
-                seqLogger.emit({
-                    timestamp: new Date(data.ts).toISOString(),
-                    level: _seqLogObj.SeqLogLvl,
-                    messageTemplate: messageTemplate.replace('{Message}', _msgObj.Message),
-                    properties: {
-                        SystemName: systemName,
-                        Application: 'ioBroker',
-                        Source: data.from,
-                        Pid: _msgObj.Pid
-                    }
-                });
+                // Check if the sources should be logged
+                if (this.config['allLogs'] || this.config[data.from]) {
+                    seqLogger.emit({
+                        timestamp: new Date(data.ts).toISOString(),
+                        level: _seqLogObj.SeqLogLvl,
+                        messageTemplate: messageTemplate.replace('{Message}', _msgObj.Message),
+                        properties: {
+                            SystemName: systemName,
+                            Application: 'ioBroker',
+                            Source: data.from,
+                            Pid: _msgObj.Pid
+                        }
+                    });
+                }
             } catch (ex) {
                 this.log.error(`Cannot send data to server: ${ex}`);
             }

@@ -39,6 +39,12 @@
 			onChange(false);
 			// reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
 			if (M) M.updateTextFields();
+
+			$('#allLogs').change(function () {
+				$('#adapterFilter *').prop('disabled', $('#allLogs').prop('checked'));
+			});
+
+			$('#adapterFilter *').prop('disabled', $('#allLogs').prop('checked'));
 		}
 
 		// This will be called by the admin adapter when the user presses the save button
@@ -63,7 +69,16 @@
 			let split = Math.round(doc.rows.length / 4);
 			let roundCount = 0;
 			let adapterListCount = 0;
-			for (key in doc.rows) {
+			let sortedList = doc.rows.sort(function (a, b) {
+				var nameA = a.id,
+					nameB = b.id
+				if (nameA < nameB) //sort string ascending
+					return -1
+				if (nameA > nameB)
+					return 1
+				return 0 //default return value (no sorting)
+			});
+			for (key in sortedList) {
 				roundCount++;
 
 				if (roundCount > split) {
@@ -72,9 +87,9 @@
 				}
 
 				let adapterName = doc.rows[key].id.replace('system.adapter.', '');
-				$(`#adapterList${adapterListCount}`).append(`<input type="checkbox" class="value" id="${adapterName}" />
-															<label for="${adapterName}" class="translate">${adapterName}</label>
-															<br />`);
+				$(`#adapterList${adapterListCount}`).append(
+					`<input type="checkbox" class="value" id="${adapterName}" /><label for="${adapterName}" class="translate">${adapterName}</label><br />`
+				);
 			}
 		});
 	</script>
@@ -167,9 +182,11 @@
 			<div class="row">
 				<div id="tab-filter" class="col s12 page">
 					<div class="row">
-						<div class="col s3 input-field">
-							<h5 class="translate" id="logLvl">logLvl</h5>
-							<br />
+						<div class="col s2 input-field">
+							<div>
+								<h5 class="translate" id="logLvl">logLvl</h5>
+								<br />
+							</div>
 							<input type="checkbox" class="value" id="silly" />
 							<label for="silly" class="translate">silly</label>
 							<br />
@@ -185,9 +202,17 @@
 							<input type="checkbox" class="value" id="error" />
 							<label for="error" class="translate">error</label>
 						</div>
-						<div class="col s9 input-field">
+						<div class="col s2 input-field">
+							<div>
+								<h5 class="translate" id="logLvl">noFilter</h5>
+								<br />
+							</div>
+							<input type="checkbox" class="value" id="allLogs" />
+							<label for="allLogs" class="translate">allLogs</label>
+						</div>
+						<div class="col s8 input-field" id="adapterFilter">
 							<div style="text-align:center;">
-								<h5 class="translate" id="adapterFilter">adapterFilter</h5>
+								<h5 class="translate" id="adapterFilterHeader">adapterFilterHeader</h5>
 							</div>
 							<div class="col s3 input-field" id="adapterList0">
 							</div>

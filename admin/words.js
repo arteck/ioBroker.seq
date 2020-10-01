@@ -84,22 +84,34 @@ systemDictionary = {
 		'de': 'Template Parameter: {Application}, {Message}, {Pid}, {SystemName} und {Source}.',
 		'ru': 'Параметры шаблона: {Application}, {Message}, {Pid}, {SystemName} и {Source}.'
 	},
-
 	'systemNameHeader': {
 		'en': 'System name',
 		'de': 'System Name',
 		'ru': 'Название системы'
 	},
-
 	'systemName': {
 		'en': 'Name of the system',
 		'de': 'Name des Systems',
 		'ru': 'Название системы'
 	},
-
 	'systemNameInfo': {
 		'en': 'Name of the system displayed in Seq.',
 		'de': 'Name des Systems der in Seq dargestellt wird.',
 		'ru': 'Название системы, которая отображается в Seq'
 	},
+	'adapterFilterHeader': {
+		'en': 'Filter logs by adapter',
+		'de': 'Logs nach Adapter filtern',
+		'ru': 'Журналы фильтров с помощью адаптера'
+	},
+	'noFilter': {
+		'en': 'Not Filtering',
+		'de': 'Nicht Filtern',
+		'ru': 'Не фильтровать'
+	},
+	'allLogs': {
+		'en': 'Log All',
+		'de': 'Alles Loggen',
+		'ru': 'Все Записи в журнал'
+	}
 };
