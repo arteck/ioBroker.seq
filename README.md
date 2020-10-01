@@ -28,7 +28,7 @@ This adapter allows you to push your ioBroker log into the system of [Seq](https
 	### __WORK IN PROGRESS__
 -->
 
-### __WORK IN PROGRESS__
+### 0.2.0 (2020-10-01)
 * (IdleBit) Optional selective logging on adapter basis
 
 ### 0.1.0 (2020-09-26)

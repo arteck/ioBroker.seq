@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.1.0",
+        "version": "0.2.0",
         "news": {
+            "0.2.0": {
+                "en": "Optional selective logging on adapter basis",
+                "de": "Optionale selektive Protokollierung auf Adapterbasis",
+                "ru": "Дополнительная выборочная регистрация на базе адаптера",
+                "pt": "Registro seletivo opcional com base no adaptador",
+                "nl": "Optionele selectieve logging op adapterbasis",
+                "fr": "Journalisation sélective facultative sur la base de l'adaptateur",
+                "it": "Registrazione selettiva opzionale sulla base dell'adattatore",
+                "es": "Registro selectivo opcional basado en adaptador",
+                "pl": "Opcjonalne logowanie selektywne na podstawie adaptera",
+                "zh-cn": "基于适配器的可选选择性日志记录"
+            },
             "0.1.0": {
                 "en": "API key is no longer not displayed in clear text \nAPI key is now stored encrypted\n***Attention: The API key will be lost and must be set again!***\nHigher dependencies of the js-controller (>=3.1.0)",
                 "de": "Der API-Schlüssel wird nicht mehr im Klartext angezeigt\nDer API-Schlüssel wird jetzt verschlüsselt gespeichert\n*** Achtung: Der API-Schlüssel geht verloren und muss erneut gesetzt werden! ***\nHöhere Abhängigkeiten des js-Controllers (> = 3.1.0)",
