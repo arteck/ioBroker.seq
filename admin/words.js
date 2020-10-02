@@ -105,13 +105,13 @@ systemDictionary = {
 		'ru': 'Журналы фильтров с помощью адаптера'
 	},
 	'noFilter': {
-		'en': 'Not Filtering',
-		'de': 'Nicht Filtern',
+		'en': 'Not filtering',
+		'de': 'Nicht filtern',
 		'ru': 'Не фильтровать'
 	},
 	'allLogs': {
-		'en': 'Log All',
-		'de': 'Alles Loggen',
+		'en': 'Log all',
+		'de': 'Alles loggen',
 		'ru': 'Все Записи в журнал'
 	}
 };
