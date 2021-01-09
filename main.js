@@ -51,20 +51,20 @@ class Seq extends utils.Adapter {
     onReady() {
 
         // Get Config
-        const _serverUrl = this.config.url;
-        const _serverPort = this.config.port;
-        const _apiKey = this.config.apiKey;
+        const serverUrl = this.config.url;
+        const serverPort = this.config.port;
+        const apiKey = this.config.apiKey;
         messageTemplate = this.config.template;
         systemName = this.config.systemName;
 
         // Check Server address
-        if (!_serverUrl || _serverUrl === '' || (!_serverUrl.startsWith('http://') && !_serverUrl.startsWith('https://'))) {
+        if (!serverUrl || serverUrl === '' || (!serverUrl.startsWith('http://') && !serverUrl.startsWith('https://'))) {
             this.log.warn('Server address is not a valid, please check your settings!')
             return;
         }
 
         // Check Server port
-        if (!_serverPort || _serverPort === '') {
+        if (!serverPort || serverPort === '') {
             this.log.warn('No server port configured, please check your settings!')
             return;
         }
@@ -76,11 +76,11 @@ class Seq extends utils.Adapter {
         }
 
         // Set which log events have been activated
-        let _subscribedEvents = [];
+        let subscribedEvents = [];
         seqEventConfig.forEach(x => {
             x.Active = this.config[x.LogLvl];
             if (x.Active) {
-                _subscribedEvents.push(x.LogLvl);
+                subscribedEvents.push(x.LogLvl);
             }
         });
 
@@ -91,7 +91,7 @@ class Seq extends utils.Adapter {
         }
 
         // Show subscribed events     
-        this.log.info(`Log events [${_subscribedEvents.join(' ,')}] subscribed`)
+        this.log.info(`Log events [${subscribedEvents.join(' ,')}] subscribed`)
 
         // Activate Log Transporter
         // https://github.com/ioBroker/ioBroker.js-controller/blob/master/doc/LOGGING.md
@@ -100,30 +100,33 @@ class Seq extends utils.Adapter {
 
         // Init SeqLogger 
         seqLogger = new seq.Logger({
-            serverUrl: _serverUrl + ':' + _serverPort,
-            apiKey: _apiKey
+            serverUrl: serverUrl + ':' + serverPort,
+            apiKey: apiKey
         });
     }
 
     onLog(data) {
         // Get seqLogLvlMap for event
-        const _seqLogObj = seqEventConfig.find(x => x.LogLvl === data.severity);
+        const seqLogObj = seqEventConfig.find(x => x.LogLvl === data.severity);
         // Extract pid and message from event message
-        const _msgObj = this.ExtractPidAndMessage(data.message);
+        const msgObj = this.ExtractPidAndMessage(data.message);
+        if (msgObj == undefined){
+            return;
+        }
         // Check if eventLvl activate
-        if (_seqLogObj.Active) {
+        if (seqLogObj.Active) {
             try {
                 // Check if the sources should be logged
                 if (this.config['allLogs'] || this.config[data.from]) {
                     seqLogger.emit({
                         timestamp: new Date(data.ts).toISOString(),
-                        level: _seqLogObj.SeqLogLvl,
-                        messageTemplate: messageTemplate.replace('{Message}', _msgObj.Message),
+                        level: seqLogObj.SeqLogLvl,
+                        messageTemplate: messageTemplate.replace('{Message}', msgObj.Message),
                         properties: {
                             SystemName: systemName,
                             Application: 'ioBroker',
                             Source: data.from,
-                            Pid: _msgObj.Pid
+                            Pid: msgObj.Pid
                         }
                     });
                 }
@@ -144,21 +147,28 @@ class Seq extends utils.Adapter {
     }
 
     ExtractPidAndMessage(inMessage) {
-        const _mIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][1];
-        const _pIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][0];
-        let _message = inMessage.substring(_mIndex).trim();
-        let _pid = inMessage.substring(_pIndex, _mIndex).replace('(', '').replace(')', '').trim();
-
-        // check if the message contains a pit, if not the object must fill differently
-        if (isNaN(_pid)) {
-            _message = inMessage.substring(_pIndex).trim();
-            _pid = -1;
+        try {
+            const mIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][1];
+            const pIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][0];
+            let message = inMessage.substring(mIndex).trim();
+            let pid = inMessage.substring(pIndex, mIndex).replace('(', '').replace(')', '').trim();
+    
+            // check if the message contains a pit, if not the object must fill differently
+            if (isNaN(pid)) {
+                message = inMessage.substring(pIndex).trim();
+                pid = -1;
+            }
+    
+            return {
+                Message: message,
+                Pid: parseInt(pid)
+            };
+            
+        } catch (err) {
+            this.log.error(`Cannot extract log pid and message: ${ex}`);
+            return undefined;
         }
-
-        return {
-            Message: _message,
-            Pid: parseInt(_pid)
-        };
+       
     }
 
     IndexesOf(string, regex) {
