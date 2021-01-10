@@ -27,6 +27,9 @@ This adapter allows you to push your ioBroker log into the system of [Seq](https
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+### 0.2.2-beta.0 (2021-01-10)
+* (IdleBit) handle uncomplete log message
+
 ### 0.2.1 (2020-10-01)
 * (IdleBit) added forgetting native...
 

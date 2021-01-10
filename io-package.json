@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.1",
+        "version": "0.2.2-beta.0",
         "news": {
+            "0.2.2-beta.0": {
+                "en": "handle uncomplete log message",
+                "de": "Behandeln Sie unvollständige Protokollnachrichten",
+                "ru": "обрабатывать неполное сообщение журнала",
+                "pt": "lidar com mensagem de registro incompleta",
+                "nl": "omgaan met een onvolledig logboekbericht",
+                "fr": "gérer un message de journal incomplet",
+                "it": "gestire il messaggio di registro incompleto",
+                "es": "manejar mensaje de registro incompleto",
+                "pl": "obsłużyć niepełny komunikat dziennika",
+                "zh-cn": "处理不完整的日志消息"
+            },
             "0.2.1": {
                 "en": "added forgetting native...",
                 "de": "hinzugefügt, einheimische zu vergessen ...",
