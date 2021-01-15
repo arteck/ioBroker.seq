@@ -30,7 +30,7 @@ This adapter allows you to push your ioBroker log into the system of [Seq](https
 	### __WORK IN PROGRESS__
 -->
 
-### __WORK IN PROGRESS__
+### 0.2.3 (2021-01-15)
 * (IdleBit) If the server address ends with "/", this must be removed. …
 
 ### 0.2.2 (2021-01-10)

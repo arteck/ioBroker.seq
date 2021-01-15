@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.2",
+        "version": "0.2.3",
         "news": {
+            "0.2.3": {
+                "en": "If the server address ends with \"/\", this must be removed. …",
+                "de": "Wenn die Serveradresse mit \"/\" endet, muss diese entfernt werden. …",
+                "ru": "Если адрес сервера заканчивается на «/», его необходимо удалить. …",
+                "pt": "Se o endereço do servidor terminar com \"/\", ele deve ser removido. …",
+                "nl": "Als het serveradres eindigt op \"/\", moet dit worden verwijderd. ...",
+                "fr": "Si l'adresse du serveur se termine par \"/\", cela doit être supprimé. …",
+                "it": "Se l'indirizzo del server termina con \"/\", è necessario rimuoverlo. ...",
+                "es": "Si la dirección del servidor termina con \"/\", debe eliminarse. ...",
+                "pl": "Jeśli adres serwera kończy się na „/”, należy to usunąć. …",
+                "zh-cn": "如果服务器地址以“ /”结尾，则必须将其删除。 …"
+            },
             "0.2.2": {
                 "en": "handle uncomplete log message",
                 "de": "Behandeln Sie unvollständige Protokollnachrichten",
