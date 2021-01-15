@@ -51,7 +51,7 @@ class Seq extends utils.Adapter {
     onReady() {
 
         // Get Config
-        const serverUrl = this.config.url;
+        let serverUrl = this.config.url;
         const serverPort = this.config.port;
         const apiKey = this.config.apiKey;
         messageTemplate = this.config.template;
@@ -88,6 +88,11 @@ class Seq extends utils.Adapter {
         if (seqEventConfig.filter(x => x.Active).length === 0) {
             this.log.warn('No log events were subscribed, please check your settings!')
             return;
+        }
+
+        // If the server address ends with /, this must be removed.
+        if (serverUrl.endsWith('/')){
+            serverUrl = serverUrl.slice(0, -1);
         }
 
         // Show subscribed events     
