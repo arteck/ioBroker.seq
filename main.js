@@ -5,6 +5,11 @@ const seq = require('seq-logging');
 const adapterName = require('./package.json').name.split('.').pop();
 let messageTemplate;
 let systemName;
+let hostName;
+let nodeVersion;
+let platform;
+let arch;
+const sourceVerions = []
 
 // Create Seq LogConfig
 let seqEventConfig = [{
@@ -46,9 +51,10 @@ class Seq extends utils.Adapter {
 
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
+        this.on('objectChange', this.onObjectChange.bind(this));
     }
 
-    onReady() {
+    async onReady() {
 
         // Get Config
         let serverUrl = this.config.url;
@@ -102,6 +108,22 @@ class Seq extends utils.Adapter {
         // https://github.com/ioBroker/ioBroker.js-controller/blob/master/doc/LOGGING.md
         this.requireLog(true);
         this.on('log', this.onLog.bind(this));
+        
+        // Subscribe all adapters in case the versions change here  
+        this.subscribeForeignObjects('system.adapter.*');
+       
+        // Build host systemPath
+        hostName = `system.host.${this.host}`;
+        // Get host object
+        const hostObj = await this.getForeignObjectAsync(hostName);
+        // Get host / JS-Controller version
+        sourceVerions[hostName] = hostObj.common.installedVersion;
+        // Get node version
+        nodeVersion = hostObj.native.process.versions.node;
+        // Get platform
+        platform = hostObj.native.os.platform;
+        // Get arch
+        arch = hostObj.native.os.arch;
 
         // Init SeqLogger 
         seqLogger = new seq.Logger({
@@ -110,7 +132,12 @@ class Seq extends utils.Adapter {
         });
     }
 
-    onLog(data) {
+    // Subscribe all adapters in case the versions change here  
+    async onObjectChange(id, obj){
+        sourceVerions[obj._id] = obj.common.version;
+    }
+
+    async onLog(data) {
         // Get seqLogLvlMap for event
         const seqLogObj = seqEventConfig.find(x => x.LogLvl === data.severity);
         // Extract pid and message from event message
@@ -118,25 +145,44 @@ class Seq extends utils.Adapter {
         if (msgObj == undefined){
             return;
         }
+
         // Check if eventLvl activate
-        if (seqLogObj.Active) {
-            try {
-                // Check if the sources should be logged
-                if (this.config['allLogs'] || this.config[data.from]) {
-                    seqLogger.emit({
-                        timestamp: new Date(data.ts).toISOString(),
-                        level: seqLogObj.SeqLogLvl,
-                        messageTemplate: messageTemplate.replace('{Message}', msgObj.Message),
-                        properties: {
-                            SystemName: systemName,
-                            Application: 'ioBroker',
-                            Source: data.from,
-                            Pid: msgObj.Pid
-                        }
-                    });
+        if (seqLogObj.Active) {        
+            // Check if the sources should be logged
+            if (this.config['allLogs'] || this.config[data.from]) {
+               
+                // Create systemPath
+                let systemPath;
+                if(data.from.startsWith('host.')){
+                    systemPath = `system.${data.from}`;
                 }
-            } catch (ex) {
-                this.log.error(`Cannot send data to server: ${ex}`);
+                else{
+                    systemPath = `system.adapter.${data.from}`;
+                }
+
+                // Get version from source adapter  
+                if (!sourceVerions[systemPath]){
+                    sourceVerions[systemPath] = (await this.getForeignObjectAsync(systemPath)).common.version;
+                }                
+                const sourceVerion = sourceVerions[systemPath];
+                
+                // Send to seq instantz
+                seqLogger.emit({
+                    timestamp: new Date(data.ts).toISOString(),
+                    level: seqLogObj.SeqLogLvl,
+                    messageTemplate: messageTemplate.replace('{Message}', msgObj.Message),
+                    properties: {
+                        SystemName: systemName,
+                        Application: 'ioBroker',                        
+                        Source: data.from,
+                        SourceVersion: sourceVerion,
+                        JsController: sourceVerions[hostName],
+                        Node: nodeVersion,
+                        Platform: platform,
+                        Arch: arch,
+                        Pid: msgObj.Pid
+                    }
+                });
             }
         }
     }

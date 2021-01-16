@@ -66,7 +66,7 @@
 			startkey: 'system.adapter.',
 			endkey: 'system.adapter.\u9999'
 		}, function (err, doc) {
-			let split = Math.round(doc.rows.length / 4);
+			let split = Math.round(doc.rows.length / 2);
 			let roundCount = 0;
 			let adapterListCount = 0;
 			let sortedList = doc.rows.sort(function (a, b) {
@@ -166,8 +166,7 @@
 											<input type="text" class="value" id="template" />
 											<label for="template" class="translate">template</label>
 											<div class="grey-text translate" id="minimalTemplate">minimalTemplate</div>
-											<div class="grey-text translate" id="templateParameters">templateParameters
-											</div>
+											<div class="grey-text translate" id="templateParameters">templateParameters</div>
 										</div>
 									</div>
 								</div>
@@ -214,14 +213,10 @@
 							<div style="text-align:center;">
 								<h5 class="translate" id="adapterFilterHeader">adapterFilterHeader</h5>
 							</div>
-							<div class="col s3 input-field" id="adapterList0">
+							<div class="col s6 input-field" id="adapterList0">
 							</div>
-							<div class="col s3 input-field" id="adapterList1">
-							</div>
-							<div class="col s3 input-field" id="adapterList2">
-							</div>
-							<div class="col s3 input-field" id="adapterList3">
-							</div>
+							<div class="col s6 input-field" id="adapterList1">
+							</div>			
 						</div>
 					</div>
 				</div>

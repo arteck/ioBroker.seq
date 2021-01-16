@@ -80,9 +80,9 @@ systemDictionary = {
 		'ru': 'Минимальный шаблон: {Message}'
 	},
 	'templateParameters': {
-		'en': 'Template Parameters: {Application}, {Message}, {Pid}, {SystemName} and {Source}.',
-		'de': 'Template Parameter: {Application}, {Message}, {Pid}, {SystemName} und {Source}.',
-		'ru': 'Параметры шаблона: {Application}, {Message}, {Pid}, {SystemName} и {Source}.'
+		'en': 'Template Parameters: \{Application\}, \{Message\}, \{Pid\}, \{SystemName\}, \{Arch\}, \{JsController\}, \{Node\}, \{Platform\}, \{SourceVersion\} and \{Source\}.',
+		'de': 'Template Parameter: \{Application\}, \{Message\}, \{Pid\}, \{SystemName\}, \{Arch\}, \{JsController\}, \{Node\}, \{Platform\}, \{SourceVersion\} und \{Source\}.',
+		'ru': 'Параметры шаблона: \{Application\}, \{Message\}, \{Pid\}, \{SystemName\}, \{Arch\}, \{JsController\}, \{Node\}, \{Platform\}, \{SourceVersion\} и \{Source\}'
 	},
 	'systemNameHeader': {
 		'en': 'System name',
