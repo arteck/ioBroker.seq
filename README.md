@@ -30,7 +30,7 @@ This adapter allows you to push your ioBroker log into the system of [Seq](https
 	### __WORK IN PROGRESS__
 -->
 
-### __WORK IN PROGRESS__
+### 0.2.4 (2021-01-16)
 * (IdleBit) bugfix display of the filter options
 * (IdleBit) bugfix display of template parameters
 * (IdleBit) add parameter logging Arch
