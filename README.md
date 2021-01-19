@@ -1,11 +1,11 @@
 ![Logo](admin/seq.png)
 # ioBroker.seq
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.seq.svg)](https://www.npmjs.com/package/iobroker.seq)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.seq.svg)](https://www.npmjs.com/package/iobroker.seq)
-![Number of Installations (latest)](https://iobroker.live/badges/seq-installed.svg)
-![Number of Installations (stable)](https://iobroker.live/badges/seq-stable.svg)
-[![Dependency Status](https://img.shields.io/david/o0shojo0o/iobroker.seq.svg)](https://david-dm.org/o0shojo0o/iobroker.seq)
+[![NPM version](http://img.shields.io/npm/v/iobroker.seq.svg?dummy=unused)](https://www.npmjs.com/package/iobroker.seq)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.seq.svg?dummy=unused)](https://www.npmjs.com/package/iobroker.seq)
+![Number of Installations (latest)](https://iobroker.live/badges/seq-installed.svg?dummy=unused)
+![Number of Installations (stable)](https://iobroker.live/badges/seq-stable.svg?dummy=unused)
+[![Dependency Status](https://img.shields.io/david/o0shojo0o/iobroker.seq.svg?dummy=unused)](https://david-dm.org/o0shojo0o/iobroker.seq)
 
 [![NPM](https://nodei.co/npm/iobroker.seq.png?downloads=true)](https://nodei.co/npm/iobroker.seq/)
 
