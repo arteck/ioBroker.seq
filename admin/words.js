@@ -1,4 +1,4 @@
-/*global systemDictionary:true */
+/* global systemDictionary: true */
 'use strict';
 
 systemDictionary = {
@@ -17,37 +17,37 @@ systemDictionary = {
 	'serverData': {
 		'en': 'Server Data',
 		'de': 'Server Data',
-		'ru': 'данные сервера'
+		'ru': 'Данные сервера'
 	},
 	'logLvl': {
 		'en': 'Log level',
 		'de': 'Log Level',
-		'ru': 'уровень регистрации'
+		'ru': 'Уровень логгирования'
 	},
 	'silly': {
 		'en': 'Verbose',
 		'de': 'Verbose',
-		'ru': 'Вербальный'
+		'ru': 'Verbose'
 	},
 	'debug': {
 		'en': 'Debug',
 		'de': 'Debug',
-		'ru': 'Отладка'
+		'ru': 'Debug'
 	},
 	'info': {
 		'en': 'Information',
 		'de': 'Information',
-		'ru': 'Информация'
+		'ru': 'Information'
 	},
 	'warn': {
 		'en': 'Warning',
 		'de': 'Warning',
-		'ru': 'Предупреждение'
+		'ru': 'Warning'
 	},
 	'error': {
 		'en': 'Error',
 		'de': 'Error',
-		'ru': 'Ошибка'
+		'ru': 'Error'
 	},
 	'apiKey': {
 		'en': 'APIKey (Optional)',
@@ -67,7 +67,7 @@ systemDictionary = {
 	'messageTemplate': {
 		'en': 'Message Template',
 		'de': 'Message Template',
-		'ru': 'шаблон сообщения'
+		'ru': 'Шаблон сообщения'
 	},
 	'template': {
 		'en': 'Template',
@@ -112,6 +112,42 @@ systemDictionary = {
 	'allLogs': {
 		'en': 'Log all',
 		'de': 'Alles loggen',
-		'ru': 'Все Записи в журнал'
+		'ru': 'Записывать всё'
+	},
+	"Main": {
+		"en": "Main",
+		"de": "Main",
+		"ru": "Главный",
+		"pt": "a Principal",
+		"nl": "Hoofd",
+		"fr": "Principale",
+		"it": "Principale",
+		"es": "Principal",
+		"pl": "Główny",
+		"zh-cn": "主要"
+	},
+	"Filter": {
+		"en": "Filter",
+		"de": "Filter",
+		"ru": "Фильтр",
+		"pt": "Filtro",
+		"nl": "Filter",
+		"fr": "Filtre",
+		"it": "Filtro",
+		"es": "Filtrar",
+		"pl": "Filtr",
+		"zh-cn": "过滤"
+	},
+	"In form http://IP_ADDRESS without port": {
+		"en": "In form http://IP_ADDRESS without port",
+		"de": "In der Form http://IP_ADDRESS ohne Port",
+		"ru": "В виде http://IP_ADDRESS без порта",
+		"pt": "No formato http://IP_ADDRESS sem porta",
+		"nl": "In vorm http://IP_ADDRESS zonder poort",
+		"fr": "Au format http://IP_ADDRESS sans port",
+		"it": "Nella forma http://IP_ADDRESS senza porta",
+		"es": "En formato http://IP_ADDRESS sin puerto",
+		"pl": "W postaci http://ADRES_IP bez portu",
+		"zh-cn": "格式为http://IP_ADDRESS，不带端口"
 	}
 };
