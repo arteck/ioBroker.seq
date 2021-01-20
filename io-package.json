@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.4",
+        "version": "0.2.5",
         "news": {
+            "0.2.5": {
+                "en": "no real change only the description for the admin",
+                "de": "Keine wirkliche Änderung nur die Beschreibung für den Admin",
+                "ru": "без реальных изменений только описание для админа",
+                "pt": "nenhuma mudança real, apenas a descrição para o administrador",
+                "nl": "geen echte verandering alleen de beschrijving voor de admin",
+                "fr": "pas de vrai changement seulement la description pour l'administrateur",
+                "it": "nessun vero cambiamento solo la descrizione per l'amministratore",
+                "es": "ningún cambio real solo la descripción para el administrador",
+                "pl": "bez zmian, tylko opis dla administratora",
+                "zh-cn": "没有真正的变化，只有管理员的描述"
+            },
             "0.2.4": {
                 "en": "bugfix display of the filter options\nbugfix display of template parameters\nadd parameter logging Arch\nadd parameter logging JsController\nadd parameter logging Node\nadd parameter logging Platform\nadd parameter logging SourceVersion",
                 "de": "Bugfix-Anzeige der Filteroptionen\nBugfix-Anzeige von Vorlagenparametern\nParameterprotokollierung hinzufügen Arch\nParameterprotokollierung hinzufügen JsController\nParameterprotokollierungsknoten hinzufügen\nParameterprotokollierungsplattform hinzufügen\nParameterprotokollierung hinzufügen SourceVersion",

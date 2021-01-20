@@ -30,6 +30,8 @@ It is also possible to apply a filter to the log levels and also to the adapters
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+### 0.2.5 (2021-01-20)
+* (IdleBit) no real change only the description for the admin
 
 ### 0.2.4 (2021-01-16)
 * (IdleBit) bugfix display of the filter options
