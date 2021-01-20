@@ -174,16 +174,16 @@
             "zh-cn": "顺序"
         },
         "desc": {
-            "en": "seq",
-            "de": "seq",
-            "ru": "seq",
-            "pt": "seq",
-            "nl": "seq",
-            "fr": "seq",
-            "it": "seq",
-            "es": "seq",
-            "pl": "seq",
-            "zh-cn": "序列"
+            "en": "This adapter allows you to push your ioBroker log into the system of Seq.\nIt is also possible to apply a filter to the log levels and also to the adapters.",
+            "de": "Dieser Adapter ermöglicht es dir, das Log von ioBroker in eine Seq Instanz zu pushen.\nEs ist auch möglich, einen Filter auf die Log-Level und auch auf die Adapter anzuwenden.",
+            "ru": "Этот адаптер позволяет вам нажать ваш ioBroker войти в систему Seq.\nТакже возможно применение фильтра к уровням журнала, а также к адаптерам.",
+            "pt": "Este adaptador permite-lhe empurrar o seu login ioBroker para o sistema da Seq.\nÉ também possível aplicar um filtro aos níveis de registo e também aos adaptadores.",
+            "nl": "Met deze adapter kunt u uw ioBroker logboek in het systeem van Seq duwen.\nHet is ook mogelijk om een filter toe te passen op de logboekniveaus en ook op de adapters.",
+            "fr": "Cet adaptateur vous permet de pousser votre ioBroker log dans le système de Seq.\nIl est également possible d'appliquer un filtre sur les niveaux de log et sur les adaptateurs.",
+            "it": "Questo adattatore permette di spingere il vostro ioBroker log nel sistema di Seq.\nE' anche possibile applicare un filtro ai livelli di log e anche agli adattatori.",
+            "es": "Este adaptador le permite empujar su registro de ioBroker en el sistema de Seq.\nTambién es posible aplicar un filtro a los niveles de registro y también a los adaptadores.",
+            "pl": "Ten adapter pozwala na wciśnięcie logu ioBroker do systemu Seq.\nMożliwe jest również zastosowanie filtra do poziomów logów, a także do adapterów.",
+            "zh-cn": "此适配器允许您将您的ioBroker日志推送到Seq的系统中\n也可以对日志级别和适配器进行过滤。"
         },
         "authors": [
             "Dennis Rathjen <info@bastelbunker.de>"
