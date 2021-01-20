@@ -11,7 +11,7 @@
 
 ## Seq adapter for ioBroker
 
-This adapter allows you to push your ioBroker log into the system of [Seq](https://datalust.co/seq)
+This adapter allows you to push your ioBroker log into the system of [Seq](https://datalust.co/seq).  
 It is also possible to apply a filter to the log levels and also to the adapters.
 
 ## Configuration
