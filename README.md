@@ -32,6 +32,8 @@ It is also possible to apply a filter to the log levels and also to the adapters
 -->
 ### __WORK IN PROGRESS__
 * (bluefox) Refactoring
+* (bluefox) Better translations
+* (IdleBit) Bugfix pull requests
 
 ### 0.2.5 (2021-01-20)
 * (IdleBit) no real change only the description for the admin
