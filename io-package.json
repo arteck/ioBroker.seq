@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.5",
+        "version": "0.2.6",
         "news": {
+            "0.2.6": {
+                "en": "Refactoring\nBetter translations",
+                "de": "Refactoring\nBessere Übersetzungen",
+                "ru": "Рефакторинг\nЛучшие переводы",
+                "pt": "Reestruturação\nMelhores traduções",
+                "nl": "Refactoring\nBetere vertalingen",
+                "fr": "Refactoring\nMeilleures traductions",
+                "it": "Refactoring\nTraduzioni migliori",
+                "es": "Refactorización\nMejores traducciones",
+                "pl": "Refaktoryzacja\nLepsze tłumaczenia",
+                "zh-cn": "重构\n更好的翻译"
+            },
             "0.2.5": {
                 "en": "no real change only the description for the admin",
                 "de": "Keine wirkliche Änderung nur die Beschreibung für den Admin",
