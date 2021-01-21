@@ -207,7 +207,7 @@ class Seq extends utils.Adapter {
             }
 
             return {
-                message,
+                message: message,
                 pid: parseInt(pid)
             };
 
