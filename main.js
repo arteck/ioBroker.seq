@@ -9,10 +9,11 @@ let hostName;
 let nodeVersion;
 let platform;
 let arch;
-const sourceVerions = []
+const sourceVersions = [];
 
 // Create Seq LogConfig
-let seqEventConfig = [{
+let seqEventConfig = [
+    {
         LogLvl: 'silly',
         SeqLogLvl: 'Verbose',
         Active: false
@@ -65,20 +66,17 @@ class Seq extends utils.Adapter {
 
         // Check Server address
         if (!serverUrl || serverUrl === '' || (!serverUrl.startsWith('http://') && !serverUrl.startsWith('https://'))) {
-            this.log.warn('Server address is not a valid, please check your settings!')
-            return;
+            return this.log.error('Server address is not a valid, please check your settings!');
         }
 
         // Check Server port
         if (!serverPort || serverPort === '') {
-            this.log.warn('No server port configured, please check your settings!')
-            return;
+            return this.log.error('No server port configured, please check your settings!')
         }
 
         // Check Message template
         if (!messageTemplate || messageTemplate === '' || !messageTemplate.includes('{Message}')) {
-            this.log.warn('Invalid message template, please check your settings!')
-            return;
+            return this.log.error('Invalid message template, please check your settings!')
         }
 
         // Set which log events have been activated
@@ -92,32 +90,31 @@ class Seq extends utils.Adapter {
 
         // Check if a log event was activated
         if (seqEventConfig.filter(x => x.Active).length === 0) {
-            this.log.warn('No log events were subscribed, please check your settings!')
-            return;
+            return this.log.error('No log events were subscribed, please check your settings!');
         }
 
         // If the server address ends with /, this must be removed.
-        if (serverUrl.endsWith('/')){
+        if (serverUrl.endsWith('/')) {
             serverUrl = serverUrl.slice(0, -1);
         }
 
-        // Show subscribed events     
-        this.log.info(`Log events [${subscribedEvents.join(' ,')}] subscribed`)
+        // Show subscribed events
+        this.log.debug(`Log events [${subscribedEvents.join(' ,')}] subscribed`)
 
         // Activate Log Transporter
         // https://github.com/ioBroker/ioBroker.js-controller/blob/master/doc/LOGGING.md
         this.requireLog(true);
         this.on('log', this.onLog.bind(this));
-        
-        // Subscribe all adapters in case the versions change here  
+
+        // Subscribe all adapters in case the versions change here
         this.subscribeForeignObjects('system.adapter.*');
-       
+
         // Build host systemPath
         hostName = `system.host.${this.host}`;
         // Get host object
         const hostObj = await this.getForeignObjectAsync(hostName);
         // Get host / JS-Controller version
-        sourceVerions[hostName] = hostObj.common.installedVersion;
+        sourceVersions[hostName] = hostObj.common.installedVersion;
         // Get node version
         nodeVersion = hostObj.native.process.versions.node;
         // Get platform
@@ -125,62 +122,61 @@ class Seq extends utils.Adapter {
         // Get arch
         arch = hostObj.native.os.arch;
 
-        // Init SeqLogger 
+        // Init SeqLogger
         seqLogger = new seq.Logger({
             serverUrl: serverUrl + ':' + serverPort,
             apiKey: apiKey
         });
     }
 
-    // Subscribe all adapters in case the versions change here  
-    async onObjectChange(id, obj){
-        sourceVerions[obj._id] = obj.common.version;
+    // Subscribe all adapters in case the versions change here
+    async onObjectChange(id, obj) {
+        sourceVersions[obj._id] = obj.common.version;
     }
 
     async onLog(data) {
         // Get seqLogLvlMap for event
         const seqLogObj = seqEventConfig.find(x => x.LogLvl === data.severity);
         // Extract pid and message from event message
-        const msgObj = this.ExtractPidAndMessage(data.message);
-        if (msgObj == undefined){
+        const msgObj = this.extractPidAndMessage(data.message);
+        if (!msgObj) {
             return;
         }
 
         // Check if eventLvl activate
-        if (seqLogObj.Active) {        
+        if (seqLogObj.Active) {
             // Check if the sources should be logged
             if (this.config['allLogs'] || this.config[data.from]) {
-               
+
                 // Create systemPath
                 let systemPath;
-                if(data.from.startsWith('host.')){
+                if (data.from.startsWith('host.')) {
                     systemPath = `system.${data.from}`;
-                }
-                else{
+                } else {
                     systemPath = `system.adapter.${data.from}`;
                 }
 
-                // Get version from source adapter  
-                if (!sourceVerions[systemPath]){
-                    sourceVerions[systemPath] = (await this.getForeignObjectAsync(systemPath)).common.version;
-                }                
-                const sourceVerion = sourceVerions[systemPath];
-                
-                // Send to seq instantz
+                // Get version from source adapter
+                if (!sourceVersions[systemPath]) {
+                    sourceVersions[systemPath] = (await this.getForeignObjectAsync(systemPath)).common.version;
+                }
+                const sourceVersion = sourceVersions[systemPath];
+
+                // Send to seq instance
                 seqLogger.emit({
                     timestamp: new Date(data.ts).toISOString(),
                     level: seqLogObj.SeqLogLvl,
-                    messageTemplate: messageTemplate.replace('{Message}', msgObj.Message),
+                    messageTemplate: messageTemplate.replace('{Message}', msgObj.message),
                     properties: {
                         SystemName: systemName,
-                        Application: 'ioBroker',                        
+                        Application: 'ioBroker',
                         Source: data.from,
-                        SourceVersion: sourceVerion,
-                        JsController: sourceVerions[hostName],
+                        SourceVersion: sourceVersion,
+                        JsController: sourceVersions[hostName],
                         Node: nodeVersion,
                         Platform: platform,
                         Arch: arch,
-                        Pid: msgObj.Pid
+                        Pid: msgObj.pid
                     }
                 });
             }
@@ -189,7 +185,7 @@ class Seq extends utils.Adapter {
 
     onUnload(callback) {
         try {
-            // Flush logger 
+            // Flush logger
             seqLogger.close();
             callback();
         } catch (ex) {
@@ -197,36 +193,38 @@ class Seq extends utils.Adapter {
         }
     }
 
-    ExtractPidAndMessage(inMessage) {
+    extractPidAndMessage(inMessage) {
         try {
-            const mIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][1];
-            const pIndex = Object.values(this.IndexesOf(inMessage, / /g))[0][0];
+            const mIndex = Object.values(this.indexesOf(inMessage, / /g))[0][1];
+            const pIndex = Object.values(this.indexesOf(inMessage, / /g))[0][0];
             let message = inMessage.substring(mIndex).trim();
             let pid = inMessage.substring(pIndex, mIndex).replace('(', '').replace(')', '').trim();
-    
+
             // check if the message contains a pit, if not the object must fill differently
-            if (isNaN(pid)) {
+            if (isNaN(parseInt(pid, 10))) {
                 message = inMessage.substring(pIndex).trim();
                 pid = -1;
             }
-    
+
             return {
-                Message: message,
-                Pid: parseInt(pid)
+                message,
+                pid: parseInt(pid)
             };
-            
+
         } catch (err) {
-            this.log.error(`Cannot extract log pid and message: ${ex}`);
+            this.log.error(`Cannot extract log pid and message: ${err}`);
             return undefined;
         }
-       
+
     }
 
-    IndexesOf(string, regex) {
+    indexesOf(string, regex) {
         let match, indexes = {};
         regex = new RegExp(regex);
         while (match = regex.exec(string)) {
-            if (!indexes[match[0]]) indexes[match[0]] = [];
+            if (!indexes[match[0]]) {
+                indexes[match[0]] = [];
+            }
             indexes[match[0]].push(match.index);
         }
         return indexes;

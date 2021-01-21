@@ -21,7 +21,9 @@
 		// This will be called by the admin adapter when the settings page loads
 		function load(settings, onChange) {
 			// example: select elements with id=key and class=value and insert value
-			if (!settings) return;
+			if (!settings) {
+				return;
+			}
 			$('.value').each(function () {
 				var $key = $(this);
 				var id = $key.attr('id');
@@ -36,15 +38,73 @@
 						.on('keyup', () => onChange());
 				}
 			});
-			onChange(false);
-			// reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
-			if (M) M.updateTextFields();
 
-			$('#allLogs').change(function () {
-				$('#adapterFilter *').prop('disabled', $('#allLogs').prop('checked'));
+			socket.emit('getObjectView', 'system', 'instance', {
+				startkey: 'system.adapter.',
+				endkey: 'system.adapter.\u9999'
+			}, function (err, doc) {
+				let split = Math.round(doc.rows.length / 2);
+				let roundCount = 0;
+				let adapterListCount = 0;
+				let sortedList = doc.rows.sort(function (a, b) {
+					var nameA = a.id,
+							nameB = b.id
+					if (nameA < nameB) //sort string ascending
+						return -1
+					if (nameA > nameB)
+						return 1
+					return 0 //default return value (no sorting)
+				});
+
+				for (key in sortedList) {
+					roundCount++;
+
+					if (roundCount > split) {
+						adapterListCount++;
+						roundCount = 1;
+					}
+
+					let adapterName = doc.rows[key].id.replace('system.adapter.', '');
+					$(`#adapterList${adapterListCount}`).append(
+						'<div class="row input-field adaptersRow">' +
+							'<div class="col s12">' +
+								`<input type="checkbox" class="value adapters" id="${adapterName}" />` +
+								`<span for="${adapterName}" class="translate">${adapterName}</span>` +
+							'</div>' +
+						'</div>'
+					);
+				}
+				$('.adaptersRow').each(function () {
+					var $this = $(this);
+					var $checkbox = $this.find('.adapters');
+					var id = $checkbox.attr('id');
+					$checkbox.prop('checked', settings[id]);
+					$this.on('click', function () {
+						if (!$('#allLogs').prop('checked')) {
+							var $this = $(this).find('.adapters');
+							$this.prop('checked', !$this.prop('checked'));
+							onChange();
+						}
+					});
+
+					if (settings.allLogs) {
+						$checkbox.prop('disabled', true);
+					}
+				});
+
+				M && M.updateTextFields();
 			});
 
-			$('#adapterFilter *').prop('disabled', $('#allLogs').prop('checked'));
+			onChange(false);
+			// reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
+			M && M.updateTextFields();
+
+			$('#allLogs').change(function () {
+				var enabled = $(this).prop('checked');
+				$('.adapters').prop('disabled', enabled);
+			});
+
+			// $('#adapterFilter *').prop('disabled', $('#allLogs').prop('checked'));
 		}
 
 		// This will be called by the admin adapter when the user presses the save button
@@ -61,162 +121,131 @@
 			});
 			callback(obj);
 		}
-
-		socket.emit('getObjectView', 'system', 'instance', {
-			startkey: 'system.adapter.',
-			endkey: 'system.adapter.\u9999'
-		}, function (err, doc) {
-			let split = Math.round(doc.rows.length / 2);
-			let roundCount = 0;
-			let adapterListCount = 0;
-			let sortedList = doc.rows.sort(function (a, b) {
-				var nameA = a.id,
-					nameB = b.id
-				if (nameA < nameB) //sort string ascending
-					return -1
-				if (nameA > nameB)
-					return 1
-				return 0 //default return value (no sorting)
-			});
-			for (key in sortedList) {
-				roundCount++;
-
-				if (roundCount > split) {
-					adapterListCount++;
-					roundCount = 1;
-				}
-
-				let adapterName = doc.rows[key].id.replace('system.adapter.', '');
-				$(`#adapterList${adapterListCount}`).append(
-					`<input type="checkbox" class="value" id="${adapterName}" /><label for="${adapterName}" class="translate">${adapterName}</label><br />`
-				);
-			}
-		});
 	</script>
-
+	<style>
+		.page {
+			height: calc(100% - 90px) !important;
+			overflow-x: hidden !important;
+		}
+	</style>
 </head>
 
 <body>
 
 	<div class="m adapter-container">
-
 		<div class="row">
-			<div class="col s12 m4 l2">
-				<img src="seq.png" class="logo">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#tab-main" class="translate active">Main</a></li>
+					<li class="tab col s6"><a href="#tab-filter" class="translate active">Filter</a> </li>
+				</ul>
 			</div>
 		</div>
-		<div>
-			<div>
+
+		<!-- Tab main -->
+		<div id="tab-main" class="col s12 page">
+			<div class="row">
+				<div class="col s12 m4 l2">
+					<img src="seq.png" class="logo">
+				</div>
+			</div>
+			<div class="row">
 				<div class="row">
-					<div class="col s12">
-						<ul class="tabs">
-							<li class="tab col s6"><a href="#tab-main" class="translate active">Main</a></li>
-							<li class="tab col s6"><a href="#tab-filter" class="translate active">Filter</a> </li>
-						</ul>
+					<div class="col s3">
+						&nbsp;
+					</div>
+					<div class="col s6 input-field">
+						<h5 class="translate" id="serverData">serverData</h5>
+						<div class="row">
+							<div class="col s9 input-field">
+								<input type="text" class="value translateP" id="url" placeholder="In form http://IP_ADDRESS without port"/>
+								<label for="url" class="translate">url</label>
+							</div>
+							<div class="col s3 input-field">
+								<input type="number" class="value" id="port" />
+								<label for="port" class="translate">port</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12 input-field">
+								<input type="password" class="value" id="apiKey" />
+								<label for="apiKey" class="translate">apiKey</label>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<!-- Tab main -->
-				<div id="tab-main" class="col s12 page">
-					<div class="row">
+				<div class="row">
+					<div class="col s3">
+						&nbsp;
+					</div>
+
+					<div class="col s6">
 						<div class="row">
-							<div class="col s3">
-								&nbsp;
-							</div>
-							<div class="col s6 input-field">
-								<h5 class="translate" id="serverData">serverData</h5>
-								<div class="row">
-									<div class="col s9 input-field">
-										<input type="text" class="value" id="url" />
-										<label for="url" class="translate">url</label>
-									</div>
-									<div class="col s3 input-field">
-										<input type="number" class="value" id="port" />
-										<label for="port" class="translate">port</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col s12 input-field">
-										<input type="password" class="value" id="apiKey" />
-										<label for="apiKey" class="translate">apiKey</label>
-									</div>
+							<div class="col s4">
+								<h5 class="translate" id="systemNameHeader">systemNameHeader</h5>
+								<div class="input-field">
+									<input type="text" class="value" id="systemName" />
+									<label for="systemName" class="translate">systemName</label>
+									<div class="grey-text translate" id="systemNameInfo">systemNameInfo</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="row">
-							<div class="col s3">
-								&nbsp;
-							</div>
-
-							<div class="col s6">
-								<div class="row">
-									<div class="col s4">
-										<h5 class="translate" id="systemNameHeader">systemNameHeader</h5>
-										<div class="input-field">
-											<input type="text" class="value" id="systemName" />
-											<label for="systemName" class="translate">systemName</label>
-											<div class="grey-text translate" id="systemNameInfo">systemNameInfo</div>
-										</div>
-									</div>
-
-									<div class="col s8">
-										<h5 class="translate" id="messageTemplate">messageTemplate</h5>
-										<div class="input-field">
-											<input type="text" class="value" id="template" />
-											<label for="template" class="translate">template</label>
-											<div class="grey-text translate" id="minimalTemplate">minimalTemplate</div>
-											<div class="grey-text translate" id="templateParameters">templateParameters</div>
-										</div>
-									</div>
+							<div class="col s8">
+								<h5 class="translate" id="messageTemplate">messageTemplate</h5>
+								<div class="input-field">
+									<input type="text" class="value" id="template" />
+									<label for="template" class="translate">template</label>
+									<div class="grey-text translate" id="minimalTemplate">minimalTemplate</div>
+									<div class="grey-text translate" id="templateParameters">templateParameters</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Tab main -->
+		</div>
+		<!-- Tab main -->
 
-			<!-- Tab filter -->
-			<div class="row">
-				<div id="tab-filter" class="col s12 page">
-					<div class="row">
-						<div class="col s2 input-field">
-							<div>
-								<h5 class="translate" id="logLvl">logLvl</h5>
-								<br />
-							</div>
-							<input type="checkbox" class="value" id="silly" />
-							<label for="silly" class="translate">silly</label>
+		<!-- Tab filter -->
+		<div class="row">
+			<div id="tab-filter" class="col s12 page">
+				<div class="row">
+					<div class="col s2 input-field">
+						<div>
+							<h5 class="translate" id="logLvl">logLvl</h5>
 							<br />
-							<input type="checkbox" class="value" id="debug" />
-							<label for="debug" class="translate">debug</label>
-							<br />
-							<input type="checkbox" class="value" id="info" />
-							<label for="info" class="translate">info</label>
-							<br />
-							<input type="checkbox" class="value" id="warn" />
-							<label for="warn" class="translate">warn</label>
-							<br />
-							<input type="checkbox" class="value" id="error" />
-							<label for="error" class="translate">error</label>
 						</div>
-						<div class="col s2 input-field">
-							<div>
-								<h5 class="translate" id="logLvl">noFilter</h5>
-								<br />
-							</div>
-							<input type="checkbox" class="value" id="allLogs" />
-							<label for="allLogs" class="translate">allLogs</label>
+						<input type="checkbox" class="value" id="silly" />
+						<span for="silly" class="translate">silly</span>
+						<br />
+						<input type="checkbox" class="value" id="debug" />
+						<span for="debug" class="translate">debug</span>
+						<br />
+						<input type="checkbox" class="value" id="info" />
+						<span for="info" class="translate">info</span>
+						<br />
+						<input type="checkbox" class="value" id="warn" />
+						<span for="warn" class="translate">warn</span>
+						<br />
+						<input type="checkbox" class="value" id="error" />
+						<span for="error" class="translate">error</span>
+					</div>
+					<div class="col s2 input-field">
+						<div>
+							<h5 class="translate" id="noFilter">noFilter</h5>
+							<br />
 						</div>
-						<div class="col s8 input-field" id="adapterFilter">
-							<div style="text-align:center;">
-								<h5 class="translate" id="adapterFilterHeader">adapterFilterHeader</h5>
-							</div>
-							<div class="col s6 input-field" id="adapterList0">
-							</div>
-							<div class="col s6 input-field" id="adapterList1">
-							</div>			
+						<input type="checkbox" class="value" id="allLogs" />
+						<span for="allLogs" class="translate">allLogs</span>
+					</div>
+					<div class="col s8 input-field" id="adapterFilter">
+						<div style="text-align:center;">
+							<h5 class="translate" id="adapterFilterHeader">adapterFilterHeader</h5>
+						</div>
+						<div class="col s6 input-field" id="adapterList0">
+						</div>
+						<div class="col s6 input-field" id="adapterList1">
 						</div>
 					</div>
 				</div>
