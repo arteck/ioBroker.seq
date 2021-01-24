@@ -1,265 +1,277 @@
 {
-  "common": {
-    "name": "seq",
-    "version": "0.2.6",
-    "news": {
-      "0.2.6": {
-        "en": "Refactoring\nBetter translations",
-        "de": "Refactoring\nBessere Übersetzungen",
-        "ru": "Рефакторинг\nЛучшие переводы",
-        "pt": "Reestruturação\nMelhores traduções",
-        "nl": "Refactoring\nBetere vertalingen",
-        "fr": "Refactoring\nMeilleures traductions",
-        "it": "Refactoring\nTraduzioni migliori",
-        "es": "Refactorización\nMejores traducciones",
-        "pl": "Refaktoryzacja\nLepsze tłumaczenia",
-        "zh-cn": "重构\n更好的翻译"
-      },
-      "0.2.5": {
-        "en": "no real change only the description for the admin",
-        "de": "Keine wirkliche Änderung nur die Beschreibung für den Admin",
-        "ru": "без реальных изменений только описание для админа",
-        "pt": "nenhuma mudança real, apenas a descrição para o administrador",
-        "nl": "geen echte verandering alleen de beschrijving voor de admin",
-        "fr": "pas de vrai changement seulement la description pour l'administrateur",
-        "it": "nessun vero cambiamento solo la descrizione per l'amministratore",
-        "es": "ningún cambio real solo la descripción para el administrador",
-        "pl": "bez zmian, tylko opis dla administratora",
-        "zh-cn": "没有真正的变化，只有管理员的描述"
-      },
-      "0.2.4": {
-        "en": "bugfix display of the filter options\nbugfix display of template parameters\nadd parameter logging Arch\nadd parameter logging JsController\nadd parameter logging Node\nadd parameter logging Platform\nadd parameter logging SourceVersion",
-        "de": "Bugfix-Anzeige der Filteroptionen\nBugfix-Anzeige von Vorlagenparametern\nParameterprotokollierung hinzufügen Arch\nParameterprotokollierung hinzufügen JsController\nParameterprotokollierungsknoten hinzufügen\nParameterprotokollierungsplattform hinzufügen\nParameterprotokollierung hinzufügen SourceVersion",
-        "ru": "исправлено отображение параметров фильтра\nисправление отображения параметров шаблона\nдобавить запись параметров Arch\nдобавить журнал параметров JsController\nдобавить узел регистрации параметров\nдобавить платформу регистрации параметров\nдобавить журнал параметров SourceVersion",
-        "pt": "exibição de correção de bug das opções de filtro\nexibição de correção de bug dos parâmetros do modelo\nadicionar parâmetro de log de arco\nadicionar JsController de registro de parâmetro\nadicionar nó de registro de parâmetro\nadicionar plataforma de registro de parâmetros\nadicionar SourceVersion de registro de parâmetro",
-        "nl": "bugfix weergave van de filter opties\nbugfix weergave van sjabloonparameters\nadd parameter logging Arch\nvoeg parameterregistratie JsController toe\nadd parameter logging Node\nvoeg parameter logging Platform toe\nvoeg parameterregistratie SourceVersion toe",
-        "fr": "correction de bogue affichage des options de filtre\ncorrection de bogue affichage des paramètres du modèle\najouter l'arche de journalisation des paramètres\najouter la journalisation des paramètres JsController\najouter un nœud de journalisation des paramètres\najouter une plate-forme de journalisation des paramètres\najouter la journalisation des paramètres SourceVersion",
-        "it": "visualizzazione di bugfix delle opzioni di filtro\nbugfix visualizzazione dei parametri del modello\naggiungere la registrazione dei parametri Arch\naggiungere la registrazione dei parametri JsController\naggiungere la registrazione dei parametri Node\naggiungere la piattaforma di registrazione dei parametri\naggiungere la registrazione dei parametri SourceVersion",
-        "es": "visualización de corrección de errores de las opciones de filtro\nvisualización de corrección de errores de los parámetros de la plantilla\nagregar arco de registro de parámetros\nagregar registro de parámetros JsController\nagregar nodo de registro de parámetros\nagregar plataforma de registro de parámetros\nañadir SourceVersion de registro de parámetros",
-        "pl": "wyświetlanie błędów w opcjach filtru\npoprawka wyświetlania parametrów szablonu\ndodać rejestrację parametrów Arch\ndodaj rejestrowanie parametrów JsController\ndodaj węzeł rejestrowania parametrów\ndodaj platformę rejestrowania parametrów\ndodaj rejestrowanie parametrów SourceVersion",
-        "zh-cn": "修正过滤器选项的显示\n错误修正显示模板参数\n添加参数记录Arch\n添加参数记录JsController\n添加参数记录节点\n添加参数记录平台\n添加参数记录SourceVersion"
-      },
-      "0.2.3": {
-        "en": "If the server address ends with \"/\", this must be removed. …",
-        "de": "Wenn die Serveradresse mit \"/\" endet, muss diese entfernt werden. …",
-        "ru": "Если адрес сервера заканчивается на «/», его необходимо удалить. …",
-        "pt": "Se o endereço do servidor terminar com \"/\", ele deve ser removido. …",
-        "nl": "Als het serveradres eindigt op \"/\", moet dit worden verwijderd. ...",
-        "fr": "Si l'adresse du serveur se termine par \"/\", cela doit être supprimé. …",
-        "it": "Se l'indirizzo del server termina con \"/\", è necessario rimuoverlo. ...",
-        "es": "Si la dirección del servidor termina con \"/\", debe eliminarse. ...",
-        "pl": "Jeśli adres serwera kończy się na „/”, należy to usunąć. …",
-        "zh-cn": "如果服务器地址以“ /”结尾，则必须将其删除。 …"
-      },
-      "0.2.2": {
-        "en": "handle uncomplete log message",
-        "de": "Behandeln Sie unvollständige Protokollnachrichten",
-        "ru": "обрабатывать неполное сообщение журнала",
-        "pt": "lidar com mensagem de registro incompleta",
-        "nl": "omgaan met een onvolledig logboekbericht",
-        "fr": "gérer un message de journal incomplet",
-        "it": "gestire il messaggio di registro incompleto",
-        "es": "manejar mensaje de registro incompleto",
-        "pl": "obsłużyć niepełny komunikat dziennika",
-        "zh-cn": "处理不完整的日志消息"
-      },
-      "0.2.2-beta.0": {
-        "en": "handle uncomplete log message",
-        "de": "Behandeln Sie unvollständige Protokollnachrichten",
-        "ru": "обрабатывать неполное сообщение журнала",
-        "pt": "lidar com mensagem de registro incompleta",
-        "nl": "omgaan met een onvolledig logboekbericht",
-        "fr": "gérer un message de journal incomplet",
-        "it": "gestire il messaggio di registro incompleto",
-        "es": "manejar mensaje de registro incompleto",
-        "pl": "obsłużyć niepełny komunikat dziennika",
-        "zh-cn": "处理不完整的日志消息"
-      },
-      "0.2.1": {
-        "en": "added forgetting native...",
-        "de": "hinzugefügt, einheimische zu vergessen ...",
-        "ru": "добавил забывая родной ...",
-        "pt": "adicionado esquecendo nativo ...",
-        "nl": "toegevoegd vergeten native ...",
-        "fr": "ajouté oubliant natif ...",
-        "it": "aggiunto dimenticando nativo ...",
-        "es": "añadido olvidando nativo ...",
-        "pl": "dodano zapominanie natywnych ...",
-        "zh-cn": "添加了忘记本机..."
-      },
-      "0.2.0": {
-        "en": "Optional selective logging on adapter basis",
-        "de": "Optionale selektive Protokollierung auf Adapterbasis",
-        "ru": "Дополнительная выборочная регистрация на базе адаптера",
-        "pt": "Registro seletivo opcional com base no adaptador",
-        "nl": "Optionele selectieve logging op adapterbasis",
-        "fr": "Journalisation sélective facultative sur la base de l'adaptateur",
-        "it": "Registrazione selettiva opzionale sulla base dell'adattatore",
-        "es": "Registro selectivo opcional basado en adaptador",
-        "pl": "Opcjonalne logowanie selektywne na podstawie adaptera",
-        "zh-cn": "基于适配器的可选选择性日志记录"
-      },
-      "0.1.0": {
-        "en": "API key is no longer not displayed in clear text \nAPI key is now stored encrypted\n***Attention: The API key will be lost and must be set again!***\nHigher dependencies of the js-controller (>=3.1.0)",
-        "de": "Der API-Schlüssel wird nicht mehr im Klartext angezeigt\nDer API-Schlüssel wird jetzt verschlüsselt gespeichert\n*** Achtung: Der API-Schlüssel geht verloren und muss erneut gesetzt werden! ***\nHöhere Abhängigkeiten des js-Controllers (> = 3.1.0)",
-        "ru": "Ключ API больше не отображается в виде открытого текста\nКлюч API теперь хранится в зашифрованном виде\n*** Внимание: API-ключ будет утерян и его нужно будет установить заново! ***\nВысшие зависимости js-контроллера (> = 3.1.0)",
-        "pt": "A chave API não é mais exibida em texto não criptografado\nA chave API agora é armazenada criptografada\n*** Atenção: A chave API será perdida e deve ser configurada novamente! ***\nDependências mais altas do controlador js (> = 3.1.0)",
-        "nl": "API-sleutel wordt niet langer in duidelijke tekst weergegeven\nAPI-sleutel wordt nu versleuteld opgeslagen\n*** Let op: de API-sleutel gaat verloren en moet opnieuw worden ingesteld! ***\nHogere afhankelijkheden van de js-controller (> = 3.1.0)",
-        "fr": "La clé API n'est plus affichée en texte clair\nLa clé API est maintenant stockée cryptée\n*** Attention: la clé API sera perdue et devra être redéfinie! ***\nDépendances plus élevées du contrôleur js (> = 3.1.0)",
-        "it": "La chiave API non viene più visualizzata in chiaro\nLa chiave API è ora archiviata crittografata\n*** Attenzione: la chiave API andrà persa e dovrà essere impostata di nuovo! ***\nDipendenze più elevate del js-controller (> = 3.1.0)",
-        "es": "La clave de API ya no se muestra en texto claro\nLa clave de API ahora se almacena cifrada\n*** Atención: ¡La clave API se perderá y debe configurarse nuevamente! ***\nDependencias más altas del controlador js (> = 3.1.0)",
-        "pl": "Klucz API nie jest już wyświetlany zwykłym tekstem\nKlucz API jest teraz przechowywany w postaci zaszyfrowanej\n*** Uwaga: klucz API zostanie utracony i należy go ustawić ponownie! ***\nWyższe zależności kontrolera js (> = 3.1.0)",
-        "zh-cn": "API密钥不再不再以明文显示\nAPI密钥现已加密存储\n***注意：API密钥将丢失，必须重新设置！***\njs控制器的更高依赖性（> = 3.1.0）"
-      },
-      "0.0.5": {
-        "en": "add param SystemName for display in Seq",
-        "de": "Fügen Sie den Parameter SystemName für die Anzeige in Seq",
-        "ru": "добавить параметр SystemName для отображения в Seq",
-        "pt": "adicione o parâmetro SystemName para exibição em Seq",
-        "nl": "voeg param SystemName toe voor weergave in Seq",
-        "fr": "ajouter le paramètre SystemName pour l'affichage dans Seq",
-        "it": "aggiungere il parametro SystemName per la visualizzazione in Seq",
-        "es": "agregue el parámetro SystemName para mostrarlo en la secuencia",
-        "pl": "dodaj parametr NazwaSystemu do wyświetlania w Seq",
-        "zh-cn": "添加参数SystemName以在Seq中显示"
-      },
-      "0.0.4": {
-        "en": "bugfix at the server address check",
-        "de": "Bugfix bei der Serveradressprüfung",
-        "ru": "исправление ошибки при проверке адреса сервера",
-        "pt": "correção de bug na verificação do endereço do servidor",
-        "nl": "bugfix bij de serveradrescontrole",
-        "fr": "correction de bogue lors de la vérification de l'adresse du serveur",
-        "it": "bugfix al controllo dell'indirizzo del server",
-        "es": "corrección de errores en la verificación de la dirección del servidor",
-        "pl": "poprawka błędu przy sprawdzaniu adresu serwera",
-        "zh-cn": "服务器地址检查中的错误修正"
-      },
-      "0.0.3": {
-        "en": "fix minimum js.controller version",
-        "de": "Korrigieren Sie die minimale js.controller-Version",
-        "ru": "исправить минимальную версию js.controller",
-        "pt": "corrigir versão mínima do js.controller",
-        "nl": "minimale js.controller-versie repareren",
-        "fr": "correction de la version minimale de js.controller",
-        "it": "correzione della versione minima di js.controller",
-        "es": "corregir la versión mínima de js.controller",
-        "pl": "napraw minimalną wersję js.controller",
-        "zh-cn": "修复最低js.controller版本"
-      },
-      "0.0.2": {
-        "en": "new release for npm...",
-        "de": "Neuerscheinung für npm ...",
-        "ru": "новый релиз для npm ...",
-        "pt": "novo lançamento para npm ...",
-        "nl": "nieuwe release voor npm ...",
-        "fr": "nouvelle version pour npm ...",
-        "it": "nuova versione per npm ...",
-        "es": "nuevo lanzamiento para npm ...",
-        "pl": "nowa wersja dla npm ...",
-        "zh-cn": "npm的新版本..."
-      },
-      "0.0.2-beta.0": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "изначальный выпуск",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "初始发行"
-      },
-      "0.0.1": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版"
-      }
+    "common": {
+        "name": "seq",
+        "version": "0.2.7",
+        "news": {
+            "0.2.7": {
+                "en": "Add overview card",
+                "de": "Übersichtskarte hinzufügen",
+                "ru": "Добавить обзорную карточку",
+                "pt": "Adicionar cartão de visão geral",
+                "nl": "Voeg overzichtskaart toe",
+                "fr": "Ajouter une carte de présentation",
+                "it": "Aggiungi scheda panoramica",
+                "es": "Agregar tarjeta de descripción general",
+                "pl": "Dodaj kartę przeglądową",
+                "zh-cn": "添加概览卡"
+            },
+            "0.2.6": {
+                "en": "Refactoring\nBetter translations",
+                "de": "Refactoring\nBessere Übersetzungen",
+                "ru": "Рефакторинг\nЛучшие переводы",
+                "pt": "Reestruturação\nMelhores traduções",
+                "nl": "Refactoring\nBetere vertalingen",
+                "fr": "Refactoring\nMeilleures traductions",
+                "it": "Refactoring\nTraduzioni migliori",
+                "es": "Refactorización\nMejores traducciones",
+                "pl": "Refaktoryzacja\nLepsze tłumaczenia",
+                "zh-cn": "重构\n更好的翻译"
+            },
+            "0.2.5": {
+                "en": "no real change only the description for the admin",
+                "de": "Keine wirkliche Änderung nur die Beschreibung für den Admin",
+                "ru": "без реальных изменений только описание для админа",
+                "pt": "nenhuma mudança real, apenas a descrição para o administrador",
+                "nl": "geen echte verandering alleen de beschrijving voor de admin",
+                "fr": "pas de vrai changement seulement la description pour l'administrateur",
+                "it": "nessun vero cambiamento solo la descrizione per l'amministratore",
+                "es": "ningún cambio real solo la descripción para el administrador",
+                "pl": "bez zmian, tylko opis dla administratora",
+                "zh-cn": "没有真正的变化，只有管理员的描述"
+            },
+            "0.2.4": {
+                "en": "bugfix display of the filter options\nbugfix display of template parameters\nadd parameter logging Arch\nadd parameter logging JsController\nadd parameter logging Node\nadd parameter logging Platform\nadd parameter logging SourceVersion",
+                "de": "Bugfix-Anzeige der Filteroptionen\nBugfix-Anzeige von Vorlagenparametern\nParameterprotokollierung hinzufügen Arch\nParameterprotokollierung hinzufügen JsController\nParameterprotokollierungsknoten hinzufügen\nParameterprotokollierungsplattform hinzufügen\nParameterprotokollierung hinzufügen SourceVersion",
+                "ru": "исправлено отображение параметров фильтра\nисправление отображения параметров шаблона\nдобавить запись параметров Arch\nдобавить журнал параметров JsController\nдобавить узел регистрации параметров\nдобавить платформу регистрации параметров\nдобавить журнал параметров SourceVersion",
+                "pt": "exibição de correção de bug das opções de filtro\nexibição de correção de bug dos parâmetros do modelo\nadicionar parâmetro de log de arco\nadicionar JsController de registro de parâmetro\nadicionar nó de registro de parâmetro\nadicionar plataforma de registro de parâmetros\nadicionar SourceVersion de registro de parâmetro",
+                "nl": "bugfix weergave van de filter opties\nbugfix weergave van sjabloonparameters\nadd parameter logging Arch\nvoeg parameterregistratie JsController toe\nadd parameter logging Node\nvoeg parameter logging Platform toe\nvoeg parameterregistratie SourceVersion toe",
+                "fr": "correction de bogue affichage des options de filtre\ncorrection de bogue affichage des paramètres du modèle\najouter l'arche de journalisation des paramètres\najouter la journalisation des paramètres JsController\najouter un nœud de journalisation des paramètres\najouter une plate-forme de journalisation des paramètres\najouter la journalisation des paramètres SourceVersion",
+                "it": "visualizzazione di bugfix delle opzioni di filtro\nbugfix visualizzazione dei parametri del modello\naggiungere la registrazione dei parametri Arch\naggiungere la registrazione dei parametri JsController\naggiungere la registrazione dei parametri Node\naggiungere la piattaforma di registrazione dei parametri\naggiungere la registrazione dei parametri SourceVersion",
+                "es": "visualización de corrección de errores de las opciones de filtro\nvisualización de corrección de errores de los parámetros de la plantilla\nagregar arco de registro de parámetros\nagregar registro de parámetros JsController\nagregar nodo de registro de parámetros\nagregar plataforma de registro de parámetros\nañadir SourceVersion de registro de parámetros",
+                "pl": "wyświetlanie błędów w opcjach filtru\npoprawka wyświetlania parametrów szablonu\ndodać rejestrację parametrów Arch\ndodaj rejestrowanie parametrów JsController\ndodaj węzeł rejestrowania parametrów\ndodaj platformę rejestrowania parametrów\ndodaj rejestrowanie parametrów SourceVersion",
+                "zh-cn": "修正过滤器选项的显示\n错误修正显示模板参数\n添加参数记录Arch\n添加参数记录JsController\n添加参数记录节点\n添加参数记录平台\n添加参数记录SourceVersion"
+            },
+            "0.2.3": {
+                "en": "If the server address ends with \"/\", this must be removed. …",
+                "de": "Wenn die Serveradresse mit \"/\" endet, muss diese entfernt werden. …",
+                "ru": "Если адрес сервера заканчивается на «/», его необходимо удалить. …",
+                "pt": "Se o endereço do servidor terminar com \"/\", ele deve ser removido. …",
+                "nl": "Als het serveradres eindigt op \"/\", moet dit worden verwijderd. ...",
+                "fr": "Si l'adresse du serveur se termine par \"/\", cela doit être supprimé. …",
+                "it": "Se l'indirizzo del server termina con \"/\", è necessario rimuoverlo. ...",
+                "es": "Si la dirección del servidor termina con \"/\", debe eliminarse. ...",
+                "pl": "Jeśli adres serwera kończy się na „/”, należy to usunąć. …",
+                "zh-cn": "如果服务器地址以“ /”结尾，则必须将其删除。 …"
+            },
+            "0.2.2": {
+                "en": "handle uncomplete log message",
+                "de": "Behandeln Sie unvollständige Protokollnachrichten",
+                "ru": "обрабатывать неполное сообщение журнала",
+                "pt": "lidar com mensagem de registro incompleta",
+                "nl": "omgaan met een onvolledig logboekbericht",
+                "fr": "gérer un message de journal incomplet",
+                "it": "gestire il messaggio di registro incompleto",
+                "es": "manejar mensaje de registro incompleto",
+                "pl": "obsłużyć niepełny komunikat dziennika",
+                "zh-cn": "处理不完整的日志消息"
+            },
+            "0.2.2-beta.0": {
+                "en": "handle uncomplete log message",
+                "de": "Behandeln Sie unvollständige Protokollnachrichten",
+                "ru": "обрабатывать неполное сообщение журнала",
+                "pt": "lidar com mensagem de registro incompleta",
+                "nl": "omgaan met een onvolledig logboekbericht",
+                "fr": "gérer un message de journal incomplet",
+                "it": "gestire il messaggio di registro incompleto",
+                "es": "manejar mensaje de registro incompleto",
+                "pl": "obsłużyć niepełny komunikat dziennika",
+                "zh-cn": "处理不完整的日志消息"
+            },
+            "0.2.1": {
+                "en": "added forgetting native...",
+                "de": "hinzugefügt, einheimische zu vergessen ...",
+                "ru": "добавил забывая родной ...",
+                "pt": "adicionado esquecendo nativo ...",
+                "nl": "toegevoegd vergeten native ...",
+                "fr": "ajouté oubliant natif ...",
+                "it": "aggiunto dimenticando nativo ...",
+                "es": "añadido olvidando nativo ...",
+                "pl": "dodano zapominanie natywnych ...",
+                "zh-cn": "添加了忘记本机..."
+            },
+            "0.2.0": {
+                "en": "Optional selective logging on adapter basis",
+                "de": "Optionale selektive Protokollierung auf Adapterbasis",
+                "ru": "Дополнительная выборочная регистрация на базе адаптера",
+                "pt": "Registro seletivo opcional com base no adaptador",
+                "nl": "Optionele selectieve logging op adapterbasis",
+                "fr": "Journalisation sélective facultative sur la base de l'adaptateur",
+                "it": "Registrazione selettiva opzionale sulla base dell'adattatore",
+                "es": "Registro selectivo opcional basado en adaptador",
+                "pl": "Opcjonalne logowanie selektywne na podstawie adaptera",
+                "zh-cn": "基于适配器的可选选择性日志记录"
+            },
+            "0.1.0": {
+                "en": "API key is no longer not displayed in clear text \nAPI key is now stored encrypted\n***Attention: The API key will be lost and must be set again!***\nHigher dependencies of the js-controller (>=3.1.0)",
+                "de": "Der API-Schlüssel wird nicht mehr im Klartext angezeigt\nDer API-Schlüssel wird jetzt verschlüsselt gespeichert\n*** Achtung: Der API-Schlüssel geht verloren und muss erneut gesetzt werden! ***\nHöhere Abhängigkeiten des js-Controllers (> = 3.1.0)",
+                "ru": "Ключ API больше не отображается в виде открытого текста\nКлюч API теперь хранится в зашифрованном виде\n*** Внимание: API-ключ будет утерян и его нужно будет установить заново! ***\nВысшие зависимости js-контроллера (> = 3.1.0)",
+                "pt": "A chave API não é mais exibida em texto não criptografado\nA chave API agora é armazenada criptografada\n*** Atenção: A chave API será perdida e deve ser configurada novamente! ***\nDependências mais altas do controlador js (> = 3.1.0)",
+                "nl": "API-sleutel wordt niet langer in duidelijke tekst weergegeven\nAPI-sleutel wordt nu versleuteld opgeslagen\n*** Let op: de API-sleutel gaat verloren en moet opnieuw worden ingesteld! ***\nHogere afhankelijkheden van de js-controller (> = 3.1.0)",
+                "fr": "La clé API n'est plus affichée en texte clair\nLa clé API est maintenant stockée cryptée\n*** Attention: la clé API sera perdue et devra être redéfinie! ***\nDépendances plus élevées du contrôleur js (> = 3.1.0)",
+                "it": "La chiave API non viene più visualizzata in chiaro\nLa chiave API è ora archiviata crittografata\n*** Attenzione: la chiave API andrà persa e dovrà essere impostata di nuovo! ***\nDipendenze più elevate del js-controller (> = 3.1.0)",
+                "es": "La clave de API ya no se muestra en texto claro\nLa clave de API ahora se almacena cifrada\n*** Atención: ¡La clave API se perderá y debe configurarse nuevamente! ***\nDependencias más altas del controlador js (> = 3.1.0)",
+                "pl": "Klucz API nie jest już wyświetlany zwykłym tekstem\nKlucz API jest teraz przechowywany w postaci zaszyfrowanej\n*** Uwaga: klucz API zostanie utracony i należy go ustawić ponownie! ***\nWyższe zależności kontrolera js (> = 3.1.0)",
+                "zh-cn": "API密钥不再不再以明文显示\nAPI密钥现已加密存储\n***注意：API密钥将丢失，必须重新设置！***\njs控制器的更高依赖性（> = 3.1.0）"
+            },
+            "0.0.5": {
+                "en": "add param SystemName for display in Seq",
+                "de": "Fügen Sie den Parameter SystemName für die Anzeige in Seq",
+                "ru": "добавить параметр SystemName для отображения в Seq",
+                "pt": "adicione o parâmetro SystemName para exibição em Seq",
+                "nl": "voeg param SystemName toe voor weergave in Seq",
+                "fr": "ajouter le paramètre SystemName pour l'affichage dans Seq",
+                "it": "aggiungere il parametro SystemName per la visualizzazione in Seq",
+                "es": "agregue el parámetro SystemName para mostrarlo en la secuencia",
+                "pl": "dodaj parametr NazwaSystemu do wyświetlania w Seq",
+                "zh-cn": "添加参数SystemName以在Seq中显示"
+            },
+            "0.0.4": {
+                "en": "bugfix at the server address check",
+                "de": "Bugfix bei der Serveradressprüfung",
+                "ru": "исправление ошибки при проверке адреса сервера",
+                "pt": "correção de bug na verificação do endereço do servidor",
+                "nl": "bugfix bij de serveradrescontrole",
+                "fr": "correction de bogue lors de la vérification de l'adresse du serveur",
+                "it": "bugfix al controllo dell'indirizzo del server",
+                "es": "corrección de errores en la verificación de la dirección del servidor",
+                "pl": "poprawka błędu przy sprawdzaniu adresu serwera",
+                "zh-cn": "服务器地址检查中的错误修正"
+            },
+            "0.0.3": {
+                "en": "fix minimum js.controller version",
+                "de": "Korrigieren Sie die minimale js.controller-Version",
+                "ru": "исправить минимальную версию js.controller",
+                "pt": "corrigir versão mínima do js.controller",
+                "nl": "minimale js.controller-versie repareren",
+                "fr": "correction de la version minimale de js.controller",
+                "it": "correzione della versione minima di js.controller",
+                "es": "corregir la versión mínima de js.controller",
+                "pl": "napraw minimalną wersję js.controller",
+                "zh-cn": "修复最低js.controller版本"
+            },
+            "0.0.2": {
+                "en": "new release for npm...",
+                "de": "Neuerscheinung für npm ...",
+                "ru": "новый релиз для npm ...",
+                "pt": "novo lançamento para npm ...",
+                "nl": "nieuwe release voor npm ...",
+                "fr": "nouvelle version pour npm ...",
+                "it": "nuova versione per npm ...",
+                "es": "nuevo lanzamiento para npm ...",
+                "pl": "nowa wersja dla npm ...",
+                "zh-cn": "npm的新版本..."
+            },
+            "0.0.2-beta.0": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "изначальный выпуск",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "初始发行"
+            },
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Seq",
+        "titleLang": {
+            "en": "Seq",
+            "de": "Seq",
+            "ru": "Seq",
+            "pt": "Seq",
+            "nl": "Seq",
+            "fr": "Seq",
+            "it": "Seq",
+            "es": "Seq",
+            "pl": "Seq",
+            "zh-cn": "顺序"
+        },
+        "desc": {
+            "en": "This adapter allows you to push your ioBroker log into the system of Seq.\nIt is also possible to apply a filter to the log levels and also to the adapters.",
+            "de": "Dieser Adapter ermöglicht es dir, das Log von ioBroker in eine Seq Instanz zu pushen.\nEs ist auch möglich, einen Filter auf die Log-Level und auch auf die Adapter anzuwenden.",
+            "ru": "Этот адаптер позволяет вам нажать ваш ioBroker войти в систему Seq.\nТакже возможно применение фильтра к уровням журнала, а также к адаптерам.",
+            "pt": "Este adaptador permite-lhe empurrar o seu login ioBroker para o sistema da Seq.\nÉ também possível aplicar um filtro aos níveis de registo e também aos adaptadores.",
+            "nl": "Met deze adapter kunt u uw ioBroker logboek in het systeem van Seq duwen.\nHet is ook mogelijk om een filter toe te passen op de logboekniveaus en ook op de adapters.",
+            "fr": "Cet adaptateur vous permet de pousser votre ioBroker log dans le système de Seq.\nIl est également possible d'appliquer un filtre sur les niveaux de log et sur les adaptateurs.",
+            "it": "Questo adattatore permette di spingere il vostro ioBroker log nel sistema di Seq.\nE' anche possibile applicare un filtro ai livelli di log e anche agli adattatori.",
+            "es": "Este adaptador le permite empujar su registro de ioBroker en el sistema de Seq.\nTambién es posible aplicar un filtro a los niveles de registro y también a los adaptadores.",
+            "pl": "Ten adapter pozwala na wciśnięcie logu ioBroker do systemu Seq.\nMożliwe jest również zastosowanie filtra do poziomów logów, a także do adapterów.",
+            "zh-cn": "此适配器允许您将您的ioBroker日志推送到Seq的系统中\n也可以对日志级别和适配器进行过滤。"
+        },
+        "authors": [
+            "Dennis Rathjen <info@bastelbunker.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "logTransporter": true,
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "seq.png",
+        "enabled": true,
+        "localLink": "%url%:%port%",
+        "extIcon": "https://raw.githubusercontent.com/o0shojo0o/ioBroker.seq/master/admin/seq.png",
+        "readme": "https://github.com/o0shojo0o/ioBroker.seq/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "logic",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=3.1.0"
+            }
+        ],
+        "installedFrom": "https://github.com/o0shojo0o/ioBroker.seq/tarball/master"
     },
-    "title": "Seq",
-    "titleLang": {
-      "en": "Seq",
-      "de": "Seq",
-      "ru": "Seq",
-      "pt": "Seq",
-      "nl": "Seq",
-      "fr": "Seq",
-      "it": "Seq",
-      "es": "Seq",
-      "pl": "Seq",
-      "zh-cn": "顺序"
+    "encryptedNative": [
+        "apiKey"
+    ],
+    "protectedNative": [
+        "apiKey"
+    ],
+    "native": {
+        "silly": true,
+        "debug": true,
+        "info": true,
+        "warn": true,
+        "error": true,
+        "allLogs": true,
+        "url": "",
+        "port": "",
+        "apiKey": "",
+        "template": "{Source}: {Message}",
+        "systemName": "System_01"
     },
-    "desc": {
-      "en": "This adapter allows you to push your ioBroker log into the system of Seq.\nIt is also possible to apply a filter to the log levels and also to the adapters.",
-      "de": "Dieser Adapter ermöglicht es dir, das Log von ioBroker in eine Seq Instanz zu pushen.\nEs ist auch möglich, einen Filter auf die Log-Level und auch auf die Adapter anzuwenden.",
-      "ru": "Этот адаптер позволяет вам нажать ваш ioBroker войти в систему Seq.\nТакже возможно применение фильтра к уровням журнала, а также к адаптерам.",
-      "pt": "Este adaptador permite-lhe empurrar o seu login ioBroker para o sistema da Seq.\nÉ também possível aplicar um filtro aos níveis de registo e também aos adaptadores.",
-      "nl": "Met deze adapter kunt u uw ioBroker logboek in het systeem van Seq duwen.\nHet is ook mogelijk om een filter toe te passen op de logboekniveaus en ook op de adapters.",
-      "fr": "Cet adaptateur vous permet de pousser votre ioBroker log dans le système de Seq.\nIl est également possible d'appliquer un filtre sur les niveaux de log et sur les adaptateurs.",
-      "it": "Questo adattatore permette di spingere il vostro ioBroker log nel sistema di Seq.\nE' anche possibile applicare un filtro ai livelli di log e anche agli adattatori.",
-      "es": "Este adaptador le permite empujar su registro de ioBroker en el sistema de Seq.\nTambién es posible aplicar un filtro a los niveles de registro y también a los adaptadores.",
-      "pl": "Ten adapter pozwala na wciśnięcie logu ioBroker do systemu Seq.\nMożliwe jest również zastosowanie filtra do poziomów logów, a także do adapterów.",
-      "zh-cn": "此适配器允许您将您的ioBroker日志推送到Seq的系统中\n也可以对日志级别和适配器进行过滤。"
-    },
-    "authors": [
-      "Dennis Rathjen <info@bastelbunker.de>"
-    ],
-    "keywords": [
-      "ioBroker",
-      "template",
-      "Smart Home",
-      "home automation"
-    ],
-    "logTransporter": true,
-    "license": "MIT",
-    "platform": "Javascript/Node.js",
-    "main": "main.js",
-    "icon": "seq.png",
-    "enabled": true,
-    "localLink": "%url%:%port%",
-    "extIcon": "https://raw.githubusercontent.com/o0shojo0o/ioBroker.seq/master/admin/seq.png",
-    "readme": "https://github.com/o0shojo0o/ioBroker.seq/blob/master/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "logic",
-    "compact": true,
-    "connectionType": "local",
-    "dataSource": "push",
-    "materialize": true,
-    "dependencies": [
-      {
-        "js-controller": ">=3.1.0"
-      }
-    ],
-    "installedFrom": "https://github.com/o0shojo0o/ioBroker.seq/tarball/master"
-  },
-  "encryptedNative": [
-    "apiKey"
-  ],
-  "protectedNative": [
-    "apiKey"
-  ],
-  "native": {
-    "silly": true,
-    "debug": true,
-    "info": true,
-    "warn": true,
-    "error": true,
-    "allLogs": true,
-    "url": "",
-    "port": "",
-    "apiKey": "",
-    "template": "{Source}: {Message}",
-    "systemName": "System_01"
-  },
-  "objects": [],
-  "instanceObjects": []
+    "objects": [],
+    "instanceObjects": []
 }
