@@ -116,7 +116,13 @@
 				if ($this.attr('type') === 'checkbox') {
 					obj[$this.attr('id')] = $this.prop('checked');
 				} else {
-					obj[$this.attr('id')] = $this.val();
+					let value = $this.val();
+					if ($this.attr('id') === 'url'){						
+						if (value.endsWith('/')) {
+							value = value.slice(0, -1);
+						}
+					}
+					obj[$this.attr('id')] = value;
 				}
 			});
 			callback(obj);
