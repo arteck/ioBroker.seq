@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.7",
+        "version": "0.2.8",
         "news": {
+            "0.2.8": {
+                "en": "Bugfix NullPointerException",
+                "de": "Bugfix NullPointerException",
+                "ru": "Исправление ошибки NullPointerException",
+                "pt": "Bugfix NullPointerException",
+                "nl": "Bugfix NullPointerException",
+                "fr": "Correction de bug NullPointerException",
+                "it": "Bugfix NullPointerException",
+                "es": "Corrección de errores NullPointerException",
+                "pl": "Poprawka błędu NullPointerException",
+                "zh-cn": "错误修正NullPointerException"
+            },
             "0.2.7": {
                 "en": "Add overview card",
                 "de": "Übersichtskarte hinzufügen",
