@@ -131,7 +131,9 @@ class Seq extends utils.Adapter {
 
     // Subscribe all adapters in case the versions change here
     async onObjectChange(id, obj) {
-        sourceVersions[obj._id] = obj.common.version;
+        if (obj){
+            sourceVersions[obj._id] = obj.common.version;
+        }
     }
 
     async onLog(data) {
