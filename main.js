@@ -160,9 +160,13 @@ class Seq extends utils.Adapter {
 
                 // Get version from source adapter
                 if (!sourceVersions[systemPath]) {
-                    sourceVersions[systemPath] = (await this.getForeignObjectAsync(systemPath)).common.version;
-                }
-                const sourceVersion = sourceVersions[systemPath];
+                    const object = await this.getForeignObjectAsync(systemPath);
+                    if (object) {
+                        sourceVersions[systemPath] = object.common.version;
+                    } else {
+                        sourceVersions[systemPath] = 'n/a';
+                    }
+                }                
 
                 // Send to seq instance
                 seqLogger.emit({
@@ -173,7 +177,7 @@ class Seq extends utils.Adapter {
                         SystemName: systemName,
                         Application: 'ioBroker',
                         Source: data.from,
-                        SourceVersion: sourceVersion,
+                        SourceVersion: sourceVersions[systemPath],
                         JsController: sourceVersions[hostName],
                         Node: nodeVersion,
                         Platform: platform,
