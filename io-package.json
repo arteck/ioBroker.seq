@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.8",
+        "version": "0.2.9",
         "news": {
+            "0.2.9": {
+                "en": "Bugfix 'Cannot read property common of null'",
+                "de": "Bugfix 'Eigenschaft von null kann nicht gelesen werden'",
+                "ru": "Исправление: «Невозможно прочитать общее свойство null»",
+                "pt": "Correção de bug 'Não é possível ler propriedade comum de nulo'",
+                "nl": "Bugfix 'Kan eigenschap van null niet lezen'",
+                "fr": "Correction de bug 'Impossible de lire la propriété commune de null'",
+                "it": "Bugfix \"Impossibile leggere la proprietà comune di null\"",
+                "es": "Corrección de error 'No se puede leer la propiedad común de nulo'",
+                "pl": "Poprawka błędu „Nie można odczytać właściwości wspólnej wartości null”",
+                "zh-cn": "错误修正“无法读取null的公共属性”"
+            },
             "0.2.8": {
                 "en": "Bugfix NullPointerException",
                 "de": "Bugfix NullPointerException",
