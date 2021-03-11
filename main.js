@@ -200,7 +200,13 @@ class Seq extends utils.Adapter {
     }
 
     extractPidAndMessage(inMessage) {
-        try {
+        try { 
+            // Check inMessage of undefine
+            if (!inMessage) {
+                this.log.warning(`Log message is empty...`);
+                return undefined;
+            }
+
             const mIndex = Object.values(this.indexesOf(inMessage, / /g))[0][1];
             const pIndex = Object.values(this.indexesOf(inMessage, / /g))[0][0];
             let message = inMessage.substring(mIndex).trim();
