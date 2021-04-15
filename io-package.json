@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "seq",
-        "version": "0.2.9",
+        "version": "0.2.10",
         "news": {
+            "0.2.10": {
+                "en": "Check log message of undefine",
+                "de": "Überprüfen Sie die Protokollmeldung von undefine",
+                "ru": "Проверьте сообщение журнала undefine",
+                "pt": "Verifique a mensagem de registro de undefine",
+                "nl": "Controleer het logboekbericht van undefine",
+                "fr": "Vérifier le message du journal non défini",
+                "it": "Controlla il messaggio di log di undefine",
+                "es": "Verifique el mensaje de registro de indefinido",
+                "pl": "Sprawdź komunikat dziennika o niezdefiniowanym",
+                "zh-cn": "检查未定义的日志消息"
+            },
             "0.2.9": {
                 "en": "Bugfix 'Cannot read property common of null'",
                 "de": "Bugfix 'Eigenschaft von null kann nicht gelesen werden'",
