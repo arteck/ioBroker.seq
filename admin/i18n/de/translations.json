@@ -1,20 +1,20 @@
 {
     "Filter": "Filter",
     "In form http://IP_ADDRESS without port": "In der Form http://IP_ADDRESS ohne Port",
-    "Main": "Main",
+    "Main": "Allgemein",
     "adapterFilterHeader": "Logs nach Adapter filtern",
     "allLogs": "Alles loggen",
-    "apiKey": "APIKey (Optional)",
+    "apiKey": "API Key (Optional)",
     "debug": "Debug",
     "error": "Error",
     "info": "Information",
-    "logLvl": "Log Level",
+    "logLvl": "Log-Stufe",
     "messageTemplate": "Message Template",
     "minimalTemplate": "Minimales Template: {Message}",
     "noFilter": "Nicht filtern",
     "port": "Port",
     "seq adapter settings": "Adaptereinstellungen für Seq",
-    "serverData": "Server Data",
+    "serverData": "Server Daten",
     "silly": "Verbose",
     "systemName": "Name des Systems",
     "systemNameHeader": "System Name",
@@ -22,5 +22,5 @@
     "template": "Template",
     "templateParameters": "Template Parameter: {Application}, {Message}, {Pid}, {SystemName}, {Arch}, {JsController}, {Node}, {Platform}, {SourceVersion} und {Source}.",
     "url": "URL",
-    "warn": "Warning"
+    "warn": "Warnung"
 }
