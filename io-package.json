@@ -13,7 +13,8 @@
                 "it": "Controlla il messaggio di log di undefine",
                 "es": "Verifique el mensaje de registro de indefinido",
                 "pl": "Sprawdź komunikat dziennika o niezdefiniowanym",
-                "zh-cn": "检查未定义的日志消息"
+                "zh-cn": "检查未定义的日志消息",
+                "uk": "Перевірте повідомлення журналу undefine"
             },
             "0.2.9": {
                 "en": "Bugfix 'Cannot read property common of null'",
@@ -25,7 +26,8 @@
                 "it": "Bugfix \"Impossibile leggere la proprietà comune di null\"",
                 "es": "Corrección de error 'No se puede leer la propiedad común de nulo'",
                 "pl": "Poprawka błędu „Nie można odczytać właściwości wspólnej wartości null”",
-                "zh-cn": "错误修正“无法读取null的公共属性”"
+                "zh-cn": "错误修正“无法读取null的公共属性”",
+                "uk": "Виправлення помилки \"Неможливо прочитати властивість, загальну для null\""
             },
             "0.2.8": {
                 "en": "Bugfix NullPointerException",
@@ -37,7 +39,8 @@
                 "it": "Bugfix NullPointerException",
                 "es": "Corrección de errores NullPointerException",
                 "pl": "Poprawka błędu NullPointerException",
-                "zh-cn": "错误修正NullPointerException"
+                "zh-cn": "错误修正NullPointerException",
+                "uk": "Виправлено помилку NullPointerException"
             },
             "0.2.7": {
                 "en": "Add overview card",
@@ -49,7 +52,8 @@
                 "it": "Aggiungi scheda panoramica",
                 "es": "Agregar tarjeta de descripción general",
                 "pl": "Dodaj kartę przeglądową",
-                "zh-cn": "添加概览卡"
+                "zh-cn": "添加概览卡",
+                "uk": "Додайте картку огляду"
             },
             "0.2.6": {
                 "en": "Refactoring\nBetter translations",
@@ -61,7 +65,8 @@
                 "it": "Refactoring\nTraduzioni migliori",
                 "es": "Refactorización\nMejores traducciones",
                 "pl": "Refaktoryzacja\nLepsze tłumaczenia",
-                "zh-cn": "重构\n更好的翻译"
+                "zh-cn": "重构\n更好的翻译",
+                "uk": "Рефакторинг\nКращі переклади"
             },
             "0.2.5": {
                 "en": "no real change only the description for the admin",
@@ -73,7 +78,8 @@
                 "it": "nessun vero cambiamento solo la descrizione per l'amministratore",
                 "es": "ningún cambio real solo la descripción para el administrador",
                 "pl": "bez zmian, tylko opis dla administratora",
-                "zh-cn": "没有真正的变化，只有管理员的描述"
+                "zh-cn": "没有真正的变化，只有管理员的描述",
+                "uk": "реальних змін немає, лише опис для адміністратора"
             },
             "0.2.4": {
                 "en": "bugfix display of the filter options\nbugfix display of template parameters\nadd parameter logging Arch\nadd parameter logging JsController\nadd parameter logging Node\nadd parameter logging Platform\nadd parameter logging SourceVersion",
@@ -85,7 +91,8 @@
                 "it": "visualizzazione di bugfix delle opzioni di filtro\nbugfix visualizzazione dei parametri del modello\naggiungere la registrazione dei parametri Arch\naggiungere la registrazione dei parametri JsController\naggiungere la registrazione dei parametri Node\naggiungere la piattaforma di registrazione dei parametri\naggiungere la registrazione dei parametri SourceVersion",
                 "es": "visualización de corrección de errores de las opciones de filtro\nvisualización de corrección de errores de los parámetros de la plantilla\nagregar arco de registro de parámetros\nagregar registro de parámetros JsController\nagregar nodo de registro de parámetros\nagregar plataforma de registro de parámetros\nañadir SourceVersion de registro de parámetros",
                 "pl": "wyświetlanie błędów w opcjach filtru\npoprawka wyświetlania parametrów szablonu\ndodać rejestrację parametrów Arch\ndodaj rejestrowanie parametrów JsController\ndodaj węzeł rejestrowania parametrów\ndodaj platformę rejestrowania parametrów\ndodaj rejestrowanie parametrów SourceVersion",
-                "zh-cn": "修正过滤器选项的显示\n错误修正显示模板参数\n添加参数记录Arch\n添加参数记录JsController\n添加参数记录节点\n添加参数记录平台\n添加参数记录SourceVersion"
+                "zh-cn": "修正过滤器选项的显示\n错误修正显示模板参数\n添加参数记录Arch\n添加参数记录JsController\n添加参数记录节点\n添加参数记录平台\n添加参数记录SourceVersion",
+                "uk": "виправлено помилку відображення параметрів фільтра\nвиправлено помилку відображення параметрів шаблону\nдодати журналювання параметрів Arch\nдодати журналювання параметрів JsController\nдодати вузол журналювання параметрів\nдодати платформу реєстрації параметрів\nдодати журналювання параметрів SourceVersion"
             },
             "0.2.3": {
                 "en": "If the server address ends with \"/\", this must be removed. …",
@@ -97,7 +104,8 @@
                 "it": "Se l'indirizzo del server termina con \"/\", è necessario rimuoverlo. ...",
                 "es": "Si la dirección del servidor termina con \"/\", debe eliminarse. ...",
                 "pl": "Jeśli adres serwera kończy się na „/”, należy to usunąć. …",
-                "zh-cn": "如果服务器地址以“ /”结尾，则必须将其删除。 …"
+                "zh-cn": "如果服务器地址以“ /”结尾，则必须将其删除。 …",
+                "uk": "Якщо адреса сервера закінчується на \"/\", це потрібно видалити. …"
             },
             "0.2.2": {
                 "en": "handle uncomplete log message",
@@ -109,7 +117,8 @@
                 "it": "gestire il messaggio di registro incompleto",
                 "es": "manejar mensaje de registro incompleto",
                 "pl": "obsłużyć niepełny komunikat dziennika",
-                "zh-cn": "处理不完整的日志消息"
+                "zh-cn": "处理不完整的日志消息",
+                "uk": "обробка незавершеного повідомлення журналу"
             },
             "0.2.2-beta.0": {
                 "en": "handle uncomplete log message",
@@ -121,7 +130,8 @@
                 "it": "gestire il messaggio di registro incompleto",
                 "es": "manejar mensaje de registro incompleto",
                 "pl": "obsłużyć niepełny komunikat dziennika",
-                "zh-cn": "处理不完整的日志消息"
+                "zh-cn": "处理不完整的日志消息",
+                "uk": "обробка незавершеного повідомлення журналу"
             },
             "0.2.1": {
                 "en": "added forgetting native...",
@@ -133,7 +143,8 @@
                 "it": "aggiunto dimenticando nativo ...",
                 "es": "añadido olvidando nativo ...",
                 "pl": "dodano zapominanie natywnych ...",
-                "zh-cn": "添加了忘记本机..."
+                "zh-cn": "添加了忘记本机...",
+                "uk": "додав забути рідне..."
             },
             "0.2.0": {
                 "en": "Optional selective logging on adapter basis",
@@ -145,7 +156,8 @@
                 "it": "Registrazione selettiva opzionale sulla base dell'adattatore",
                 "es": "Registro selectivo opcional basado en adaptador",
                 "pl": "Opcjonalne logowanie selektywne na podstawie adaptera",
-                "zh-cn": "基于适配器的可选选择性日志记录"
+                "zh-cn": "基于适配器的可选选择性日志记录",
+                "uk": "Додаткове вибіркове журналювання на основі адаптера"
             },
             "0.1.0": {
                 "en": "API key is no longer not displayed in clear text \nAPI key is now stored encrypted\n***Attention: The API key will be lost and must be set again!***\nHigher dependencies of the js-controller (>=3.1.0)",
@@ -157,7 +169,8 @@
                 "it": "La chiave API non viene più visualizzata in chiaro\nLa chiave API è ora archiviata crittografata\n*** Attenzione: la chiave API andrà persa e dovrà essere impostata di nuovo! ***\nDipendenze più elevate del js-controller (> = 3.1.0)",
                 "es": "La clave de API ya no se muestra en texto claro\nLa clave de API ahora se almacena cifrada\n*** Atención: ¡La clave API se perderá y debe configurarse nuevamente! ***\nDependencias más altas del controlador js (> = 3.1.0)",
                 "pl": "Klucz API nie jest już wyświetlany zwykłym tekstem\nKlucz API jest teraz przechowywany w postaci zaszyfrowanej\n*** Uwaga: klucz API zostanie utracony i należy go ustawić ponownie! ***\nWyższe zależności kontrolera js (> = 3.1.0)",
-                "zh-cn": "API密钥不再不再以明文显示\nAPI密钥现已加密存储\n***注意：API密钥将丢失，必须重新设置！***\njs控制器的更高依赖性（> = 3.1.0）"
+                "zh-cn": "API密钥不再不再以明文显示\nAPI密钥现已加密存储\n***注意：API密钥将丢失，必须重新设置！***\njs控制器的更高依赖性（> = 3.1.0）",
+                "uk": "Ключ API більше не відображається відкритим текстом\nКлюч API тепер зберігається в зашифрованому вигляді\n***Увага: ключ API буде втрачено, і його потрібно встановити знову!***\nВищі залежності js-контролера (>=3.1.0)"
             },
             "0.0.5": {
                 "en": "add param SystemName for display in Seq",
@@ -169,7 +182,8 @@
                 "it": "aggiungere il parametro SystemName per la visualizzazione in Seq",
                 "es": "agregue el parámetro SystemName para mostrarlo en la secuencia",
                 "pl": "dodaj parametr NazwaSystemu do wyświetlania w Seq",
-                "zh-cn": "添加参数SystemName以在Seq中显示"
+                "zh-cn": "添加参数SystemName以在Seq中显示",
+                "uk": "додати параметр SystemName для відображення в Seq"
             },
             "0.0.4": {
                 "en": "bugfix at the server address check",
@@ -181,7 +195,8 @@
                 "it": "bugfix al controllo dell'indirizzo del server",
                 "es": "corrección de errores en la verificación de la dirección del servidor",
                 "pl": "poprawka błędu przy sprawdzaniu adresu serwera",
-                "zh-cn": "服务器地址检查中的错误修正"
+                "zh-cn": "服务器地址检查中的错误修正",
+                "uk": "виправлення помилки при перевірці адреси сервера"
             },
             "0.0.3": {
                 "en": "fix minimum js.controller version",
@@ -193,7 +208,8 @@
                 "it": "correzione della versione minima di js.controller",
                 "es": "corregir la versión mínima de js.controller",
                 "pl": "napraw minimalną wersję js.controller",
-                "zh-cn": "修复最低js.controller版本"
+                "zh-cn": "修复最低js.controller版本",
+                "uk": "виправити мінімальну версію js.controller"
             },
             "0.0.2": {
                 "en": "new release for npm...",
@@ -205,7 +221,8 @@
                 "it": "nuova versione per npm ...",
                 "es": "nuevo lanzamiento para npm ...",
                 "pl": "nowa wersja dla npm ...",
-                "zh-cn": "npm的新版本..."
+                "zh-cn": "npm的新版本...",
+                "uk": "новий випуск для npm..."
             },
             "0.0.2-beta.0": {
                 "en": "initial release",
@@ -217,7 +234,8 @@
                 "it": "Versione iniziale",
                 "es": "Versión inicial",
                 "pl": "Pierwsze wydanie",
-                "zh-cn": "初始发行"
+                "zh-cn": "初始发行",
+                "uk": "початковий випуск"
             },
             "0.0.1": {
                 "en": "initial release",
@@ -229,10 +247,10 @@
                 "it": "Versione iniziale",
                 "es": "Versión inicial",
                 "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
+                "zh-cn": "首次出版",
+                "uk": "початковий випуск"
             }
         },
-        "title": "Seq",
         "titleLang": {
             "en": "Seq",
             "de": "Seq",
@@ -243,7 +261,8 @@
             "it": "Seq",
             "es": "Seq",
             "pl": "Seq",
-            "zh-cn": "顺序"
+            "zh-cn": "顺序",
+            "uk": "послідовність"
         },
         "desc": {
             "en": "This adapter allows you to push your ioBroker log into the system of Seq.\nIt is also possible to apply a filter to the log levels and also to the adapters.",
@@ -255,16 +274,16 @@
             "it": "Questo adattatore permette di spingere il vostro ioBroker log nel sistema di Seq.\nE' anche possibile applicare un filtro ai livelli di log e anche agli adattatori.",
             "es": "Este adaptador le permite empujar su registro de ioBroker en el sistema de Seq.\nTambién es posible aplicar un filtro a los niveles de registro y también a los adaptadores.",
             "pl": "Ten adapter pozwala na wciśnięcie logu ioBroker do systemu Seq.\nMożliwe jest również zastosowanie filtra do poziomów logów, a także do adapterów.",
-            "zh-cn": "此适配器允许您将您的ioBroker日志推送到Seq的系统中\n也可以对日志级别和适配器进行过滤。"
+            "zh-cn": "此适配器允许您将您的ioBroker日志推送到Seq的系统中\n也可以对日志级别和适配器进行过滤。",
+            "uk": "Цей адаптер дозволяє надсилати ваш журнал ioBroker до системи Seq.\nТакож можна застосувати фільтр до рівнів журналу, а також до адаптерів."
         },
         "authors": [
             "Dennis Rathjen <info@bastelbunker.de>"
         ],
         "keywords": [
-            "ioBroker",
-            "template",
-            "Smart Home",
-            "home automation"
+            "seq",
+            "log",
+            "logging"
         ],
         "logTransporter": true,
         "license": "MIT",
@@ -272,7 +291,11 @@
         "main": "main.js",
         "icon": "seq.png",
         "enabled": true,
-        "localLink": "%url%:%port%",
+        "localLinks": {
+            "_default": {
+                "link": "%url%:%port%"
+            }
+        },
         "extIcon": "https://raw.githubusercontent.com/o0shojo0o/ioBroker.seq/master/admin/seq.png",
         "readme": "https://github.com/o0shojo0o/ioBroker.seq/blob/master/README.md",
         "loglevel": "info",
