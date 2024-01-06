@@ -156,8 +156,8 @@
         "link": "%url%:%port%"
       }
     },
-    "extIcon": "https://raw.githubusercontent.com/o0shojo0o/ioBroker.seq/master/admin/seq.png",
-    "readme": "https://github.com/o0shojo0o/ioBroker.seq/blob/master/README.md",
+    "extIcon": "https://raw.githubusercontent.com/arteck/ioBroker.seq/master/admin/seq.png",
+    "readme": "https://github.com/arteck/ioBroker.seq/blob/master/README.md",
     "loglevel": "info",
     "mode": "daemon",
     "type": "logic",

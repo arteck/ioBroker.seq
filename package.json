@@ -3,10 +3,10 @@
   "version": "0.3.0",
   "description": "seq",
   "author": {
-    "name": "Dennis Hinzpeter",
-    "email": "info@bastelbunker.de"
+    "name": "Dennis Rathjen and Arthur Rupp",
+    "email": "arteck@outlook.com"
   },
-  "homepage": "https://github.com/o0shojo0o/ioBroker.seq",
+  "homepage": "https://github.com/arteck/ioBroker.seq",
   "license": "MIT",
   "keywords": [
     "seq",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/o0shojo0o/ioBroker.seq"
+    "url": "https://github.com/arteck/ioBroker.seq"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.0.4",
@@ -59,7 +59,7 @@
     "release": "release-script"
   },
   "bugs": {
-    "url": "https://github.com/o0shojo0o/ioBroker.seq/issues"
+    "url": "https://github.com/arteck/ioBroker.seq/issues"
   },
   "readmeFilename": "README.md"
 }
