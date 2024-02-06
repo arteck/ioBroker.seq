@@ -163,8 +163,7 @@
     "type": "logic",
     "compact": true,
     "connectionType": "local",
-    "dataSource": "push",
-    "materialize": true,
+    "dataSource": "push", 
     "dependencies": [
       {
         "js-controller": ">=3.1.0"
@@ -172,6 +171,10 @@
     ],
     "tier": 1
   },
+  "adminUI": {
+      "config": "materialize",
+      "tab": "materialize"
+    },
   "encryptedNative": [
     "apiKey"
   ],
