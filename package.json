@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.3.2",
-    "seq-logging": "^3.0.0",
+    "seq-logging": "2.1.1",
     "child_process": "^1.0.2",
     "node-fetch-commonjs": "^3.3.2"
   },
@@ -57,5 +57,6 @@
   "bugs": {
     "url": "https://github.com/arteck/ioBroker.seq/issues"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "type": "commonjs"
 }
