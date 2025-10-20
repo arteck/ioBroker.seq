@@ -33,6 +33,9 @@ It is also possible to apply a filter to the log levels and also to the adapters
 	Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 0.4.1 (2025-10-20)
+* (arteck) pin seq-logging
+
 ### 0.4.0 (2025-10-20)
 * (arteck) Dependencies have been updated
 * (arteck) transfer to arteck

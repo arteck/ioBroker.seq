@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "news": {
+      "0.4.1": {
+        "en": "pin seq-logging",
+        "de": "pin seq-logging",
+        "ru": "секгирование",
+        "pt": "pig segs-logging",
+        "nl": "pin seque-logging",
+        "fr": "épingle suivante",
+        "it": "pin seq-logging",
+        "es": "pin seq-logging",
+        "pl": "pin seq- logowanie",
+        "uk": "шемале",
+        "zh-cn": "pinch 后续博客"
+      },
       "0.4.0": {
         "en": "Dependencies have been updated\ntransfer to arteck",
         "de": "Abhängigkeiten wurden aktualisiert\ntransfer zum arteck",
@@ -80,19 +93,6 @@
         "pl": "Dodaj kartę przeglądową",
         "zh-cn": "添加概览卡",
         "uk": "Додайте картку огляду"
-      },
-      "0.2.6": {
-        "en": "Refactoring\nBetter translations",
-        "de": "Refactoring\nBessere Übersetzungen",
-        "ru": "Рефакторинг\nЛучшие переводы",
-        "pt": "Reestruturação\nMelhores traduções",
-        "nl": "Refactoring\nBetere vertalingen",
-        "fr": "Refactoring\nMeilleures traductions",
-        "it": "Refactoring\nTraduzioni migliori",
-        "es": "Refactorización\nMejores traducciones",
-        "pl": "Refaktoryzacja\nLepsze tłumaczenia",
-        "zh-cn": "重构\n更好的翻译",
-        "uk": "Рефакторинг\nКращі переклади"
       }
     },
     "titleLang": {
