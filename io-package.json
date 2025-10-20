@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "news": {
+      "0.4.0": {
+        "en": "Dependencies have been updated\ntransfer to arteck",
+        "de": "Abhängigkeiten wurden aktualisiert\ntransfer zum arteck",
+        "ru": "Зависимости были обновлены\nпереезд в артек",
+        "pt": "As dependências foram atualizadas\ntransferência para arteck",
+        "nl": "Afhankelijkheden zijn bijgewerkt\ntransfer naar arteck",
+        "fr": "Les dépendances ont été actualisées\ntransfert à arteck",
+        "it": "Le dipendenze sono state aggiornate\ntrasferimento ad arteck",
+        "es": "Se han actualizado las dependencias\ntransferencia a la arteria",
+        "pl": "Zaktualizowano zależności\nprzeniesienie do artecka",
+        "uk": "Залежність було оновлено\nпередача до артека",
+        "zh-cn": "依赖关系已更新\n转到arteck"
+      },
       "0.3.0": {
         "en": "added adminTab\nadded adapter to TIER 1",
         "de": "adminTab\nzusatzadapter zu TIER 1",
@@ -80,19 +93,6 @@
         "pl": "Refaktoryzacja\nLepsze tłumaczenia",
         "zh-cn": "重构\n更好的翻译",
         "uk": "Рефакторинг\nКращі переклади"
-      },
-      "0.2.5": {
-        "en": "no real change only the description for the admin",
-        "de": "Keine wirkliche Änderung nur die Beschreibung für den Admin",
-        "ru": "без реальных изменений только описание для админа",
-        "pt": "nenhuma mudança real, apenas a descrição para o administrador",
-        "nl": "geen echte verandering alleen de beschrijving voor de admin",
-        "fr": "pas de vrai changement seulement la description pour l'administrateur",
-        "it": "nessun vero cambiamento solo la descrizione per l'amministratore",
-        "es": "ningún cambio real solo la descripción para el administrador",
-        "pl": "bez zmian, tylko opis dla administratora",
-        "zh-cn": "没有真正的变化，只有管理员的描述",
-        "uk": "реальних змін немає, лише опис для адміністратора"
       }
     },
     "titleLang": {
@@ -163,7 +163,7 @@
     "type": "logic",
     "compact": true,
     "connectionType": "local",
-    "dataSource": "push", 
+    "dataSource": "push",
     "dependencies": [
       {
         "js-controller": ">=3.1.0"
@@ -172,9 +172,9 @@
     "tier": 1
   },
   "adminUI": {
-      "config": "materialize",
-      "tab": "materialize"
-    },
+    "config": "materialize",
+    "tab": "materialize"
+  },
   "encryptedNative": [
     "apiKey"
   ],

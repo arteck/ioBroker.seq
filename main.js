@@ -16,34 +16,33 @@ let seqEventConfig = [
     {
         LogLvl: 'silly',
         SeqLogLvl: 'Verbose',
-        Active: false
+        Active: false,
     },
     {
         LogLvl: 'debug',
         SeqLogLvl: 'Debug',
-        Active: false
+        Active: false,
     },
     {
         LogLvl: 'info',
         SeqLogLvl: 'Information',
-        Active: false
+        Active: false,
     },
     {
         LogLvl: 'warn',
         SeqLogLvl: 'Warning',
-        Active: false
+        Active: false,
     },
     {
         LogLvl: 'error',
         SeqLogLvl: 'Error',
-        Active: false
-    }
+        Active: false,
+    },
 ];
 
 let seqLogger;
 
 class Seq extends utils.Adapter {
-
     constructor(options) {
         super({
             ...options,
@@ -56,7 +55,6 @@ class Seq extends utils.Adapter {
     }
 
     async onReady() {
-
         // Get Config
         let serverUrl = this.config.url;
         const serverPort = this.config.port;
@@ -71,12 +69,12 @@ class Seq extends utils.Adapter {
 
         // Check Server port
         if (!serverPort || serverPort === '') {
-            return this.log.error('No server port configured, please check your settings!')
+            return this.log.error('No server port configured, please check your settings!');
         }
 
         // Check Message template
         if (!messageTemplate || messageTemplate === '' || !messageTemplate.includes('{Message}')) {
-            return this.log.error('Invalid message template, please check your settings!')
+            return this.log.error('Invalid message template, please check your settings!');
         }
 
         // Set which log events have been activated
@@ -99,7 +97,7 @@ class Seq extends utils.Adapter {
         }
 
         // Show subscribed events
-        this.log.debug(`Log events [${subscribedEvents.join(' ,')}] subscribed`)
+        this.log.debug(`Log events [${subscribedEvents.join(' ,')}] subscribed`);
 
         // Activate Log Transporter
         // https://github.com/ioBroker/ioBroker.js-controller/blob/master/doc/LOGGING.md
@@ -124,14 +122,14 @@ class Seq extends utils.Adapter {
 
         // Init SeqLogger
         seqLogger = new seq.Logger({
-            serverUrl: serverUrl + ':' + serverPort,
-            apiKey: apiKey
+            serverUrl: `${serverUrl}:${serverPort}`,
+            apiKey: apiKey,
         });
     }
 
     // Subscribe all adapters in case the versions change here
     async onObjectChange(id, obj) {
-        if (obj){
+        if (obj) {
             sourceVersions[obj._id] = obj.common.version;
         }
     }
@@ -149,7 +147,6 @@ class Seq extends utils.Adapter {
         if (seqLogObj.Active) {
             // Check if the sources should be logged
             if (this.config['allLogs'] || this.config[data.from]) {
-
                 // Create systemPath
                 let systemPath;
                 if (data.from.startsWith('host.')) {
@@ -166,7 +163,7 @@ class Seq extends utils.Adapter {
                     } else {
                         sourceVersions[systemPath] = 'n/a';
                     }
-                }                
+                }
 
                 // Send to seq instance
                 seqLogger.emit({
@@ -182,8 +179,8 @@ class Seq extends utils.Adapter {
                         Node: nodeVersion,
                         Platform: platform,
                         Arch: arch,
-                        Pid: msgObj.pid
-                    }
+                        Pid: msgObj.pid,
+                    },
                 });
             }
         }
@@ -200,7 +197,7 @@ class Seq extends utils.Adapter {
     }
 
     extractPidAndMessage(inMessage) {
-        try { 
+        try {
             // Check inMessage of undefine
             if (!inMessage) {
                 this.log.warning(`Log message is empty...`);
@@ -220,20 +217,19 @@ class Seq extends utils.Adapter {
 
             return {
                 message,
-                pid: parseInt(pid)
+                pid: parseInt(pid),
             };
-
         } catch (err) {
             this.log.error(`Cannot extract log pid and message: ${err}`);
             return undefined;
         }
-
     }
 
     indexesOf(string, regex) {
-        let match, indexes = {};
+        let match,
+            indexes = {};
         regex = new RegExp(regex);
-        while (match = regex.exec(string)) {
+        while ((match = regex.exec(string))) {
             if (!indexes[match[0]]) {
                 indexes[match[0]] = [];
             }
@@ -244,7 +240,7 @@ class Seq extends utils.Adapter {
 }
 
 if (module.parent) {
-    module.exports = (options) => new Seq(options);
+    module.exports = options => new Seq(options);
 } else {
     new Seq();
 }
