@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "news": {
+      "0.4.2": {
+        "en": "fixes",
+        "de": "korrekturen",
+        "ru": "фиксировать",
+        "pt": "correções",
+        "nl": "reparaties",
+        "fr": "correctifs",
+        "it": "correzioni",
+        "es": "soluciones",
+        "pl": "poprawki",
+        "uk": "фіксатори",
+        "zh-cn": "修补"
+      },
       "0.4.1": {
         "en": "pin seq-logging",
         "de": "pin seq-logging",
@@ -80,19 +93,6 @@
         "pl": "Poprawka błędu NullPointerException",
         "zh-cn": "错误修正NullPointerException",
         "uk": "Виправлено помилку NullPointerException"
-      },
-      "0.2.7": {
-        "en": "Add overview card",
-        "de": "Übersichtskarte hinzufügen",
-        "ru": "Добавить обзорную карточку",
-        "pt": "Adicionar cartão de visão geral",
-        "nl": "Voeg overzichtskaart toe",
-        "fr": "Ajouter une carte de présentation",
-        "it": "Aggiungi scheda panoramica",
-        "es": "Agregar tarjeta de descripción general",
-        "pl": "Dodaj kartę przeglądową",
-        "zh-cn": "添加概览卡",
-        "uk": "Додайте картку огляду"
       }
     },
     "titleLang": {
@@ -135,6 +135,7 @@
     "main": "main.js",
     "icon": "seq.png",
     "enabled": true,
+    "tier": 1,
     "adminTab": {
       "name": {
         "en": "Seq",
@@ -164,16 +165,20 @@
     "compact": true,
     "connectionType": "local",
     "dataSource": "push",
-    "dependencies": [
+    "adminUI": {
+      "config": "html",
+      "tab": "materialize"
+    },
+    "globalDependencies": [
       {
-        "js-controller": ">=3.1.0"
+        "admin": ">=7.6.17"
       }
     ],
-    "tier": 1
-  },
-  "adminUI": {
-    "config": "materialize",
-    "tab": "materialize"
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ]
   },
   "encryptedNative": [
     "apiKey"
