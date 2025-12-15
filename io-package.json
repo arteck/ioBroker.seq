@@ -132,7 +132,6 @@
     "logTransporter": true,
     "license": "MIT",
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "seq.png",
     "enabled": true,
     "tier": 1,
