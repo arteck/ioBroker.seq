@@ -149,8 +149,7 @@
         "pl": "Seq",
         "zh-cn": "Seq"
       },
-      "link": "%url%:%port%",
-      "fa-icon": "</i><img style='width:24px;margin-bottom:-6px;' src='/adapter/seq/seq.png'><i>"
+      "link": "%url%:%port%"
     },
     "localLinks": {
       "_default": {
