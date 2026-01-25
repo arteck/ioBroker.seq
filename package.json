@@ -9,6 +9,7 @@
   "homepage": "https://github.com/arteck/ioBroker.seq",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "seq",
     "log",
     "logging"
