@@ -1,0 +1,152 @@
+{
+  "i18n": true,
+  "type": "tabs",
+  "items": {
+    "_tab_main": {
+      "type": "panel",
+      "label": "Main",
+      "items": {
+        "serverDataHeader": {
+          "type": "header",
+          "text": "serverData",
+          "size": 5,
+          "newLine": true
+        },
+        "url": {
+          "type": "text",
+          "label": "url",
+          "placeholder": "In form http://IP_ADDRESS without port",
+          "xs": 12,
+          "sm": 12,
+          "md": 9,
+          "lg": 9,
+          "xl": 9,
+          "newLine": true
+        },
+        "port": {
+          "type": "number",
+          "label": "port",
+          "xs": 12,
+          "sm": 12,
+          "md": 3,
+          "lg": 3,
+          "xl": 3,
+          "newLine": false
+        },
+        "apiKey": {
+          "type": "password",
+          "label": "apiKey",
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12,
+          "newLine": true
+        },
+        "systemNameHeader": {
+          "type": "header",
+          "text": "systemNameHeader",
+          "size": 5,
+          "newLine": true
+        },
+        "systemName": {
+          "type": "text",
+          "label": "systemName",
+          "help": "systemNameInfo",
+          "xs": 12,
+          "sm": 12,
+          "md": 4,
+          "lg": 4,
+          "xl": 4,
+          "newLine": true
+        },
+        "messageTemplateHeader": {
+          "type": "header",
+          "text": "messageTemplate",
+          "size": 5,
+          "newLine": true
+        },
+        "template": {
+          "type": "text",
+          "label": "template",
+          "help": "templateParameters",
+          "xs": 12,
+          "sm": 12,
+          "md": 8,
+          "lg": 8,
+          "xl": 8,
+          "newLine": true
+        },
+        "minimalTemplateInfo": {
+          "type": "staticText",
+          "text": "minimalTemplate",
+          "xs": 12,
+          "sm": 12,
+          "md": 8,
+          "lg": 8,
+          "xl": 8,
+          "newLine": true
+        }
+      }
+    },
+    "_tab_filter": {
+      "type": "panel",
+      "label": "Filter",
+      "items": {
+        "logLvlHeader": {
+          "type": "header",
+          "text": "logLvl",
+          "size": 5,
+          "newLine": true
+        },
+        "silly": {
+          "type": "checkbox",
+          "label": "silly",
+          "xs": 12,
+          "sm": 6,
+          "md": 2,
+          "lg": 2,
+          "xl": 2,
+          "newLine": true
+        },
+        "debug": {
+          "type": "checkbox",
+          "label": "debug",
+          "xs": 12,
+          "sm": 6,
+          "md": 2,
+          "lg": 2,
+          "xl": 2,
+          "newLine": true
+        },
+        "info": {
+          "type": "checkbox",
+          "label": "info",
+          "xs": 12,
+          "sm": 6,
+          "md": 2,
+          "lg": 2,
+          "xl": 2
+        },
+        "warn": {
+          "type": "checkbox",
+          "label": "warn",
+          "xs": 12,
+          "sm": 6,
+          "md": 2,
+          "lg": 2,
+          "xl": 2
+        },
+        "error": {
+          "type": "checkbox",
+          "label": "error",
+          "xs": 12,
+          "sm": 6,
+          "md": 2,
+          "lg": 2,
+          "xl": 2
+        }
+      }
+    }
+  }
+}

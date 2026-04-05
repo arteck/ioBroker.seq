@@ -146,43 +146,41 @@ class Seq extends utils.Adapter {
         // Check if eventLvl activate
         if (seqLogObj.Active) {
             // Check if the sources should be logged
-            if (this.config['allLogs'] || this.config[data.from]) {
                 // Create systemPath
-                let systemPath;
-                if (data.from.startsWith('host.')) {
-                    systemPath = `system.${data.from}`;
-                } else {
-                    systemPath = `system.adapter.${data.from}`;
-                }
-
-                // Get version from source adapter
-                if (!sourceVersions[systemPath]) {
-                    const object = await this.getForeignObjectAsync(systemPath);
-                    if (object) {
-                        sourceVersions[systemPath] = object.common.version;
-                    } else {
-                        sourceVersions[systemPath] = 'n/a';
-                    }
-                }
-
-                // Send to seq instance
-                seqLogger.emit({
-                    timestamp: new Date(data.ts).toISOString(),
-                    level: seqLogObj.SeqLogLvl,
-                    messageTemplate: messageTemplate.replace('{Message}', msgObj.message),
-                    properties: {
-                        SystemName: systemName,
-                        Application: 'ioBroker',
-                        Source: data.from,
-                        SourceVersion: sourceVersions[systemPath],
-                        JsController: sourceVersions[hostName],
-                        Node: nodeVersion,
-                        Platform: platform,
-                        Arch: arch,
-                        Pid: msgObj.pid,
-                    },
-                });
+            let systemPath;
+            if (data.from.startsWith('host.')) {
+                systemPath = `system.${data.from}`;
+            } else {
+                systemPath = `system.adapter.${data.from}`;
             }
+
+            // Get version from source adapter
+            if (!sourceVersions[systemPath]) {
+                const object = await this.getForeignObjectAsync(systemPath);
+                if (object) {
+                    sourceVersions[systemPath] = object.common.version;
+                } else {
+                    sourceVersions[systemPath] = 'n/a';
+                }
+            }
+
+            // Send to seq instance
+            seqLogger.emit({
+                timestamp: new Date(data.ts).toISOString(),
+                level: seqLogObj.SeqLogLvl,
+                messageTemplate: messageTemplate.replace('{Message}', msgObj.message),
+                properties: {
+                    SystemName: systemName,
+                    Application: 'ioBroker',
+                    Source: data.from,
+                    SourceVersion: sourceVersions[systemPath],
+                    JsController: sourceVersions[hostName],
+                    Node: nodeVersion,
+                    Platform: platform,
+                    Arch: arch,
+                    Pid: msgObj.pid,
+                },
+            });
         }
     }
 

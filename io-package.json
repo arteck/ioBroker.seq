@@ -130,7 +130,10 @@
       "logging"
     ],
     "logTransporter": true,
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
     "main": "main.js",
     "icon": "seq.png",
@@ -166,8 +169,7 @@
     "connectionType": "local",
     "dataSource": "push",
     "adminUI": {
-      "config": "html",
-      "tab": "materialize"
+      "config": "json"
     },
     "globalDependencies": [
       {
@@ -192,7 +194,6 @@
     "info": true,
     "warn": true,
     "error": true,
-    "allLogs": true,
     "url": "",
     "port": "",
     "apiKey": "",

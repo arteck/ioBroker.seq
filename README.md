@@ -25,14 +25,9 @@ It is also possible to apply a filter to the log levels and also to the adapters
 
 ## Changelog
 
-<!--
- https://github.com/AlCalzone/release-script#usage
-    npm run release minor -- --all 0.9.8 -> 0.10.0
-    npm run release patch -- --all 0.9.8 -> 0.9.9
-    npm run release prerelease beta -- --all v0.2.1 -> v0.2.2-beta.0
-	Placeholder for the next version (at the beginning of the line):
-  ### **WORK IN PROGRESS**
--->
+### **WORK IN PROGRESS**
+* (arteck) new admin
+
 ### 0.4.2 (2025-10-20)
 * (arteck) fixes
 
