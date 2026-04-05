@@ -24,8 +24,7 @@ It is also possible to apply a filter to the log levels and also to the adapters
 4. Save the settings
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 1.0.0 (2026-04-05)
 * (arteck) new admin
 
 ### 0.4.2 (2025-10-20)
@@ -128,7 +127,7 @@ It is also possible to apply a filter to the log levels and also to the adapters
 
 MIT License
 
-Copyright (c) 2025 Arthur Rupp <arteck@outlook.com>,
+Copyright (c) 2026 Arthur Rupp <arteck@outlook.com>,
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

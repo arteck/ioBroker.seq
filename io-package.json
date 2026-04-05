@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "0.4.2",
+    "version": "1.0.0",
     "news": {
+      "1.0.0": {
+        "en": "new admin",
+        "de": "neue admin",
+        "ru": "новый администратор",
+        "pt": "novo administrador",
+        "nl": "nieuwe beheerder",
+        "fr": "nouvel administrateur",
+        "it": "nuovo amministratore",
+        "es": "nuevo administrador",
+        "pl": "nowy admin",
+        "uk": "новий адміністратор",
+        "zh-cn": "新管理员"
+      },
       "0.4.2": {
         "en": "fixes",
         "de": "korrekturen",
@@ -80,19 +93,6 @@
         "pl": "Poprawka błędu „Nie można odczytać właściwości wspólnej wartości null”",
         "zh-cn": "错误修正“无法读取null的公共属性”",
         "uk": "Виправлення помилки \"Неможливо прочитати властивість, загальну для null\""
-      },
-      "0.2.8": {
-        "en": "Bugfix NullPointerException",
-        "de": "Bugfix NullPointerException",
-        "ru": "Исправление ошибки NullPointerException",
-        "pt": "Bugfix NullPointerException",
-        "nl": "Bugfix NullPointerException",
-        "fr": "Correction de bug NullPointerException",
-        "it": "Bugfix NullPointerException",
-        "es": "Corrección de errores NullPointerException",
-        "pl": "Poprawka błędu NullPointerException",
-        "zh-cn": "错误修正NullPointerException",
-        "uk": "Виправлено помилку NullPointerException"
       }
     },
     "titleLang": {
