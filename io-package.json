@@ -125,14 +125,10 @@
       "Dennis Rathjen <info@bastelbunker.de>"
     ],
     "logTransporter": true,
-    "keywords": [
+     "keywords": [
       "seq",
       "log",
-      "logging",
-      "ioBroker",
-      "template",
-      "Smart Home",
-      "home automation"
+      "logging"
     ],
     "licenseInformation": {
       "license": "MIT",
