@@ -8,6 +8,15 @@
   },
   "homepage": "https://github.com/arteck/ioBroker.seq",
   "license": "MIT",
+  "keywords": [
+      "seq",
+      "log",
+      "logging",
+      "ioBroker",
+      "template",
+      "Smart Home",
+      "home automation"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/arteck/ioBroker.seq"
