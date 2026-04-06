@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.3.2",
-    "seq-logging": "3.0.0",
+    "seq-logging": "2.2.0",
     "child_process": "^1.0.2",
     "node-fetch-commonjs": "^3.3.2"
   },
