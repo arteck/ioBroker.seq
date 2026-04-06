@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "news": {
+      "1.0.1": {
+        "en": "Dependencies have been updated",
+        "de": "Abhängigkeiten wurden aktualisiert",
+        "ru": "Зависимости были обновлены",
+        "pt": "As dependências foram atualizadas",
+        "nl": "Afhankelijkheden zijn bijgewerkt",
+        "fr": "Les dépendances ont été actualisées",
+        "it": "Le dipendenze sono state aggiornate",
+        "es": "Se han actualizado las dependencias",
+        "pl": "Zaktualizowano zależności",
+        "uk": "Залежність було оновлено",
+        "zh-cn": "依赖关系已更新"
+      },
       "1.0.0": {
         "en": "new admin",
         "de": "neue admin",
@@ -80,19 +93,6 @@
         "pl": "Sprawdź komunikat dziennika o niezdefiniowanym",
         "zh-cn": "检查未定义的日志消息",
         "uk": "Перевірте повідомлення журналу undefine"
-      },
-      "0.2.9": {
-        "en": "Bugfix 'Cannot read property common of null'",
-        "de": "Bugfix 'Eigenschaft von null kann nicht gelesen werden'",
-        "ru": "Исправление: «Невозможно прочитать общее свойство null»",
-        "pt": "Correção de bug 'Não é possível ler propriedade comum de nulo'",
-        "nl": "Bugfix 'Kan eigenschap van null niet lezen'",
-        "fr": "Correction de bug 'Impossible de lire la propriété commune de null'",
-        "it": "Bugfix \"Impossibile leggere la proprietà comune di null\"",
-        "es": "Corrección de error 'No se puede leer la propiedad común de nulo'",
-        "pl": "Poprawka błędu „Nie można odczytać właściwości wspólnej wartości null”",
-        "zh-cn": "错误修正“无法读取null的公共属性”",
-        "uk": "Виправлення помилки \"Неможливо прочитати властивість, загальну для null\""
       }
     },
     "titleLang": {
@@ -125,7 +125,7 @@
       "Dennis Rathjen <info@bastelbunker.de>"
     ],
     "logTransporter": true,
-     "keywords": [
+    "keywords": [
       "seq",
       "log",
       "logging"
@@ -171,7 +171,7 @@
     },
     "globalDependencies": [
       {
-        "admin": ">=7.6.17"
+        "admin": ">=7.6.20"
       }
     ],
     "dependencies": [

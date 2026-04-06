@@ -23,6 +23,9 @@ It is also possible to apply a filter to the log levels and also to the adapters
 4. Save the settings
 
 ## Changelog
+### 1.0.1 (2026-04-06)
+* (arteck) Dependencies have been updated
+
 ### 1.0.0 (2026-04-05)
 * (arteck) new admin
 

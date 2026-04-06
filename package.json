@@ -1,6 +1,6 @@
 {
   "name": "iobroker.seq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "seq",
   "author": {
     "name": "Dennis Rathjen and Arthur Rupp",
@@ -9,13 +9,13 @@
   "homepage": "https://github.com/arteck/ioBroker.seq",
   "license": "MIT",
   "keywords": [
-      "seq",
-      "log",
-      "logging",
-      "ioBroker",
-      "template",
-      "Smart Home",
-      "home automation"
+    "seq",
+    "log",
+    "logging",
+    "ioBroker",
+    "template",
+    "Smart Home",
+    "home automation"
   ],
   "repository": {
     "type": "git",
