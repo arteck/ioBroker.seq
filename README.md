@@ -23,6 +23,9 @@ It is also possible to apply a filter to the log levels and also to the adapters
 4. Save the settings
 
 ## Changelog
+### 1.0.2 (2026-04-06)
+* (arteck) back to seq-logging 2.2.0
+
 ### 1.0.1 (2026-04-06)
 * (arteck) Dependencies have been updated
 

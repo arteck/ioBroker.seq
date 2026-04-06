@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "news": {
+      "1.0.2": {
+        "en": "back to seq-logging 2.2.0",
+        "de": "zurück zu seq-logging 2.2.0",
+        "ru": "обратно в seq-logging 2.2.0",
+        "pt": "de volta ao registro seguinte 2.2.0",
+        "nl": "terug naar vervolgloggen 2.2.0",
+        "fr": "retour à la suite de l'enregistrement 2.2.0",
+        "it": "back to seq-logging 2.2.0",
+        "es": "volver a seq-logging 2.2.0",
+        "pl": "powrót do logowania sekw 2.2.0",
+        "uk": "назад до seq-logging 2.2.0",
+        "zh-cn": "回到以下的博客2.2.0"
+      },
       "1.0.1": {
         "en": "Dependencies have been updated",
         "de": "Abhängigkeiten wurden aktualisiert",
@@ -80,19 +93,6 @@
         "pl": "dodać\ndostosowanie do TIER 1",
         "uk": "додано adminTab\nдодано адаптер до TIER 1",
         "zh-cn": "增 编\n增 编"
-      },
-      "0.2.10": {
-        "en": "Check log message of undefine",
-        "de": "Überprüfen Sie die Protokollmeldung von undefine",
-        "ru": "Проверьте сообщение журнала undefine",
-        "pt": "Verifique a mensagem de registro de undefine",
-        "nl": "Controleer het logboekbericht van undefine",
-        "fr": "Vérifier le message du journal non défini",
-        "it": "Controlla il messaggio di log di undefine",
-        "es": "Verifique el mensaje de registro de indefinido",
-        "pl": "Sprawdź komunikat dziennika o niezdefiniowanym",
-        "zh-cn": "检查未定义的日志消息",
-        "uk": "Перевірте повідомлення журналу undefine"
       }
     },
     "titleLang": {
