@@ -16,19 +16,6 @@
         "uk": "назад до seq-logging 2.2.0",
         "zh-cn": "回到以下的博客2.2.0"
       },
-      "1.0.1": {
-        "en": "Dependencies have been updated",
-        "de": "Abhängigkeiten wurden aktualisiert",
-        "ru": "Зависимости были обновлены",
-        "pt": "As dependências foram atualizadas",
-        "nl": "Afhankelijkheden zijn bijgewerkt",
-        "fr": "Les dépendances ont été actualisées",
-        "it": "Le dipendenze sono state aggiornate",
-        "es": "Se han actualizado las dependencias",
-        "pl": "Zaktualizowano zależności",
-        "uk": "Залежність було оновлено",
-        "zh-cn": "依赖关系已更新"
-      },
       "1.0.0": {
         "en": "new admin",
         "de": "neue admin",
@@ -54,19 +41,6 @@
         "pl": "poprawki",
         "uk": "фіксатори",
         "zh-cn": "修补"
-      },
-      "0.4.1": {
-        "en": "pin seq-logging",
-        "de": "pin seq-logging",
-        "ru": "секгирование",
-        "pt": "pig segs-logging",
-        "nl": "pin seque-logging",
-        "fr": "épingle suivante",
-        "it": "pin seq-logging",
-        "es": "pin seq-logging",
-        "pl": "pin seq- logowanie",
-        "uk": "шемале",
-        "zh-cn": "pinch 后续博客"
       },
       "0.4.0": {
         "en": "Dependencies have been updated\ntransfer to arteck",
