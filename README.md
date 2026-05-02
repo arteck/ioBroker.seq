@@ -23,6 +23,9 @@ It is also possible to apply a filter to the log levels and also to the adapters
 4. Save the settings
 
 ## Changelog
+### **WORK IN PROGRESS**
+- (copilot) Adapter requires node.js >= 22 now
+
 ### 1.0.2 (2026-04-06)
 * (arteck) back to seq-logging 2.2.0
 
