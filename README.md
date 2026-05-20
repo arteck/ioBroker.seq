@@ -128,6 +128,8 @@ It is also possible to apply a filter to the log levels and also to the adapters
 
 - (o0shojo0o) initial push
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 MIT License
