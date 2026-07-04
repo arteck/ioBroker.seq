@@ -21,6 +21,6 @@
     "systemNameInfo": "Nombre del sistema mostrado en Seq.",
     "template": "Plantilla",
     "templateParameters": "Parámetros de plantilla: {Application}, {Message}, {Pid}, {SystemName}, {Arch}, {JsController}, {Node}, {Platform}, {SourceVersion} y {Source}.",
-    "url": "URL",
+    "url": "Url",
     "warn": "Advertencia"
 }
