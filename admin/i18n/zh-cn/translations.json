@@ -1,5 +1,5 @@
 {
-    "Filter": "过滤",
+    "Filter": "筛选",
     "In form http://IP_ADDRESS without port": "格式为http://IP_ADDRESS，不带端口",
     "Main": "主要",
     "adapterFilterHeader": "通过适配器过滤日志",
