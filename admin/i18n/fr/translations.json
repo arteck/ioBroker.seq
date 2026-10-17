@@ -15,6 +15,8 @@
     "port": "Port",
     "seq adapter settings": "Paramètres d'adaptateur pour Seq",
     "serverData": "Données du serveur",
+    "sourceFilter": "Filtre de source",
+    "sourceFilterInfo": "Identifiants de source exacts séparés par des virgules (par exemple, mqtt.0, javascript.0). Laissez vide pour inclure toutes les sources.",
     "silly": "Verbeux",
     "systemName": "Nom du système",
     "systemNameHeader": "Nom du système",

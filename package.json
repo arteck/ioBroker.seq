@@ -25,9 +25,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.3.2",
-    "child_process": "^1.0.2",
-    "node-fetch-commonjs": "^3.3.2",
+    "@iobroker/adapter-core": "^3.4.3",
     "seq-logging": "3.2.0"
   },
   "devDependencies": {
@@ -41,7 +39,7 @@
     "@tsconfig/node22": "^22.0.6",
     "@types/node": "^25.9.6",
     "@types/node-schedule": "^2.1.8",
-    "typescript": "~7.0.2"
+    "typescript": "~6.0.3"
   },
   "main": "main.js",
   "files": [
@@ -54,7 +52,7 @@
     "main.js"
   ],
   "scripts": {
-    "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
+    "test:js": "mocha --require test/mocha.setup.js \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:js && npm run test:package",

@@ -170,7 +170,8 @@
     "port": "",
     "apiKey": "",
     "template": "{Source}: {Message}",
-    "systemName": "System_01"
+    "systemName": "System_01",
+    "sourceFilter": ""
   },
   "objects": [],
   "instanceObjects": []

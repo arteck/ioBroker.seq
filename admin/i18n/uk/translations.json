@@ -15,6 +15,8 @@
     "port": "Порт",
     "seq adapter settings": "Параметри адаптера для Seq",
     "serverData": "Дані сервера",
+    "sourceFilter": "Фільтр джерел",
+    "sourceFilterInfo": "Точні ідентифікатори джерел через кому (наприклад, mqtt.0, javascript.0). Залиште порожнім, щоб включити всі джерела.",
     "silly": "Багатослівний",
     "systemName": "Назва системи",
     "systemNameHeader": "Назва системи",
