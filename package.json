@@ -28,7 +28,7 @@
     "@iobroker/adapter-core": "^3.3.2",
     "child_process": "^1.0.2",
     "node-fetch-commonjs": "^3.3.2",
-    "seq-logging": "2.2.0"
+    "seq-logging": "3.2.0"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^5.2.1",
