@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "news": {
+      "1.0.3": {
+        "en": "Dependencies have been updated\nAdapter requires node.js >= 22 now",
+        "de": "Abhängigkeiten wurden aktualisiert\nAdapter benötigt jetzt node.js >= 22",
+        "ru": "Зависимости обновлены\nТеперь для адаптера требуется файл node.js >= 22",
+        "pt": "As dependências foram atualizadas\nO adaptador exige node.js >= 2",
+        "nl": "Afhankelijkheden zijn bijgewerkt\nVoor de adapter is nu node.js >= 22 nodig",
+        "fr": "Les dépendances ont été mises à jour\nAdapter nécessite node.js >= 22",
+        "it": "Le dipendenze sono aggiornate\nAdapter richiede node.js =2 ora",
+        "es": "Se han actualizado las dependencias\nEl adaptador necesita node.js >= 22 ahora",
+        "pl": "Zależności zostały zaktualizowane\nAdapter wymaga teraz node.js >= 22",
+        "uk": "Залежності оновлено\nАдаптер вимагає node.js >= 22 зараз",
+        "zh-cn": "依赖关系已更新\n适配器现在需要 node.js >= 22"
+      },
       "1.0.2": {
         "en": "back to seq-logging 2.2.0",
         "de": "zurück zu seq-logging 2.2.0",
