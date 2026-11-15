@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "seq",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "news": {
+      "1.0.4": {
+        "en": "Dependencies have been updated",
+        "de": "Abhängigkeiten wurden aktualisiert",
+        "ru": "Зависимости обновлены",
+        "pt": "As dependências foram atualizadas",
+        "nl": "Afhankelijkheden zijn bijgewerkt",
+        "fr": "Les dépendances ont été mises à jour",
+        "it": "Le dipendenze sono aggiornate",
+        "es": "Se han actualizado las dependencias",
+        "pl": "Zależności zostały zaktualizowane",
+        "uk": "Залежності оновлено",
+        "zh-cn": "依赖关系已更新"
+      },
       "1.0.3": {
         "en": "Dependencies have been updated\nAdapter requires node.js >= 22 now",
         "de": "Abhängigkeiten wurden aktualisiert\nAdapter benötigt jetzt node.js >= 22",

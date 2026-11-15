@@ -24,7 +24,7 @@ It is possible to filter by log level and by exact source IDs.
 5. Save the settings
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.0.4 (2026-11-15)
 * (arteck) Dependencies have been updated
 
 ### 1.0.3 (2026-10-17)
@@ -39,6 +39,7 @@ It is possible to filter by log level and by exact source IDs.
 
 ### 1.0.0 (2026-04-05)
 * (arteck) new admin
+
 
 
 
