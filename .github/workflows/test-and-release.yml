@@ -83,6 +83,5 @@ jobs:
       - uses: ioBroker/testing-action-deploy@v1
         with:
           node-version: ${{ matrix.node-version }}
-          npm-token: ${{ secrets.NPM_TOKEN }}
           github-token: ${{ secrets.AUTO_MERGE_TOKEN }}
 #

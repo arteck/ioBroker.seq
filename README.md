@@ -24,6 +24,9 @@ It is possible to filter by log level and by exact source IDs.
 5. Save the settings
 
 ## Changelog
+### **WORK IN PROGRESS**
+* (arteck) Dependencies have been updated
+
 ### 1.0.3 (2026-10-17)
 * (arteck) Dependencies have been updated
 - (copilot) Adapter requires node.js >= 22 now
